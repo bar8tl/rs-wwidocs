@@ -1,25 +1,25 @@
-// idocdefn.rs: Read SAP IDoc parser file, and upload IDoc definition detail and
-// structure into an internal database [20170524-BAR8TL]
+//**********************************************************************************
+// idocdefn.rs: Read SAP IDoc parser file, and upload IDoc definition detail and   *
+// structure into an internal database [20170524-BAR8TL]                           *
+//**********************************************************************************
 mod ldtables;
 mod rdparser;
 mod upldmitm;
 mod upldsgrp;
 mod upldssgm;
 
-use crate::settings::params::{ParameTp};
 use crate::settings::{SettingsTp, GRP, SGM};
-use rdparser::{scan_inpline};
+use rdparser::scan_inpline;
 use upldmitm::{UpldmitmTp, init_upldmitm, get_mitmdata, isrt_mitmdata};
 use upldsgrp::{UpldsgrpTp, init_upldsgrp, get_sgrpdata};
 use upldssgm::{UpldssgmTp, init_upldssgm, get_ssgmdata};
-use rusqlite::{Connection};
+use rusqlite::Connection;
 use std::fs::File;
 use std::io::{BufRead, BufReader};
 
 // Main logic to process: 1) Master data for IDoc Items, 2) Structure for groups,
 // and 3) Structure for segments
-pub fn upld_idocdefn(parm: ParameTp, mut stg: SettingsTp) {
-  stg.set_runvars(parm);
+pub fn upld_idocdefn(stg: SettingsTp) {
   let s = stg.clone();
   let cnn = rusqlite::Connection::open(&s.dbopt).expect("DB Error");
   let mut ui = UpldmitmTp { ..Default::default() };

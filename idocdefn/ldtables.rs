@@ -1,8 +1,10 @@
-// ldtables.rs: Maintain IDoc definition tables into reference DB
-use crate::idocdefn::upldmitm::{ItemsTp};
-use crate::idocdefn::upldsgrp::{KeystTp};
-use crate::settings::{GRP};
-use rusqlite::{Connection};
+//**********************************************************************************
+// ldtables.rs: Maintain IDoc definition tables into reference DB [20170524-BAR8TL]*
+//**********************************************************************************
+use crate::idocdefn::upldmitm::ItemsTp;
+use crate::idocdefn::upldsgrp::KeystTp;
+use crate::settings::GRP;
+use rusqlite::Connection;
 
 pub fn clear_items(cnn: &Connection, idocn: String) {
   cnn.execute(

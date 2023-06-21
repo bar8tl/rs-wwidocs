@@ -1,26 +1,25 @@
 //**********************************************************************************
 // settings.rs: Define pgm-level & run-level settings [20170524-BAR8TL]            *
 //**********************************************************************************
-pub mod params;
 mod config;
+mod params;
 
 use crate::settings::params::{ParameTp, ParamsTp};
-use crate::settings::config::{ConfigTp};
+use crate::settings::config::ConfigTp;
 use chrono::Local;
 use chrono::NaiveDateTime;
 
-// Default values
-const CNTRL: &str = "EDI_DC40";           // CONTROL_CODE
-const CLIEN: &str = "011";                // CLIENT_CODE
-const DBONM: &str = "idoctp.db";          // DB_NAME
-const DBODR: &str = ".\\";                // DB_DIR
-const INPDR: &str = ".\\files\\input\\";  // INPUTS_DIR
-const OUTDR: &str = ".\\files\\output\\"; // OUTPUTS_DIR
-const IFILT: &str = "!(*processed*)";     // INPUTS_FILTER
-const INPNM: &str = "dtsys+'_'+idocn+docno+docdt+'_inp_processed'"; // INPUTS_NAMING
-const OUTNM: &str = "dtsys+'_'+idocn+docno+docdt+'_out'";           // OUTPUTS_NAMING
+const CNTRL: &str = "EDI_DC40";           // Default values for: CONTROL_CODE,
+const CLIEN: &str = "011";                // CLIENT_CODE,
+const DBONM: &str = "idoctp.db";          // DB_NAME,
+const DBODR: &str = ".\\";                // DB_DIR,
+const INPDR: &str = ".\\files\\input\\";  // INPUTS_DIR,
+const OUTDR: &str = ".\\files\\output\\"; // OUTPUTS_DIR,
+const IFILT: &str = "!(*processed*)";     // INPUTS_FILTER,
+const INPNM: &str = "dtsys+'_'+idocn+docno+docdt+'_inp_processed'"; // INPUTS_NAMING,
+const OUTNM: &str = "dtsys+'_'+idocn+docno+docdt+'_out'";           // OUTPUTS_NAMNG
 
-pub const ITM: &str = "itm";
+pub const ITM: &str = "itm"; // Public constants for sap2flat params
 pub const GRP: &str = "grp";
 pub const SGM: &str = "sgm";
 
@@ -87,7 +86,7 @@ impl SettingsTp {
     self.dtnul = NaiveDateTime::MIN;
   }
 
-  pub fn set_runvars(&mut self, p: ParameTp) {
+  pub fn set_runvars(&mut self, p: &ParameTp) {
     if p.prm1.len() > 0 {
       self.objnm = p.prm1.clone();
     } else {

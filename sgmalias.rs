@@ -1,6 +1,7 @@
-// sgmalias.rs: Upload _segma.json file for segment aliases [20170524-BAR8TL]
-use crate::settings::params::{ParameTp};
-use crate::settings::{SettingsTp};
+//**********************************************************************************
+// sgmalias.rs: Upload _segma.json file for segment aliases [20170524-BAR8TL]      *
+//**********************************************************************************
+use crate::settings::SettingsTp;
 use rusqlite::Connection;
 use serde::Deserialize;
 use serde_json::from_reader;
@@ -23,8 +24,7 @@ struct SgmaliasTp {
   sgmal: Vec<SegmaTp>
 }
 
-pub fn upld_segmalias(parm: ParameTp, mut s: SettingsTp) {
-  s.set_runvars(parm);
+pub fn upld_segmalias(s: SettingsTp) {
   let f = File::open(format!("{}{}", s.inpdr, s.objnm)).unwrap();
   let ua: SgmaliasTp = from_reader(f).unwrap();
   let cnn = Connection::open(&s.dbopt).expect("DB open error.");

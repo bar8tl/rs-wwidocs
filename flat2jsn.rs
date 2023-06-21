@@ -2,7 +2,6 @@
 // flat2jsn.rs: Read SAP-Idoc content in standard flat TXT format and upload data  *
 // into internal structures [20170524 BAR8TL]                                      *
 //**********************************************************************************
-use crate::settings::params::{ParameTp};
 use crate::settings::{SettingsTp};
 use rusqlite::{Connection};
 use std::fs;
@@ -122,8 +121,7 @@ struct DidocTp {
   c8   : usize
 }
 
-pub fn convert_flat2json(parm: ParameTp, mut s: SettingsTp) {
-  s.set_runvars(parm);
+pub fn conv_flat2json(s: SettingsTp) {
   let mut d = DidocTp { ..Default::default() };
   let cnn = Connection::open(&s.dbopt).expect("DB Error");
   d.outdr = s.outdr.clone();

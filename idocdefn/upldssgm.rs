@@ -1,10 +1,13 @@
-// upld_ssgmdata: Get IDoc segments structure data and to create corresponding
-// structure records in ref database
+//**********************************************************************************
+// upld_ssgmdata.rs: Get IDoc segments structure data and to create corresponding  *
+// structure records in ref database                                               *
+//**********************************************************************************
 use crate::idocdefn::rdparser::*;
-use crate::idocdefn::upldsgrp::{KeystTp};
-use crate::idocdefn::upldmitm::{BEGIN, END, IDOC, SEGMENT, EXTENSION, FIELDS, QUALIFIED, QUALF, LEVEL};
+use crate::idocdefn::upldsgrp::KeystTp;
+use crate::idocdefn::upldmitm::{BEGIN, END, IDOC, SEGMENT, EXTENSION, FIELDS,
+  QUALIFIED, QUALF, LEVEL};
 use crate::idocdefn::ldtables::*;
-use rusqlite::{Connection};
+use rusqlite::Connection;
 
 const SEGMENTTYPE: &str = "SEGMENTTYPE";
 

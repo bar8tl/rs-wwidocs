@@ -1,3 +1,3 @@
-cd c:\rbrust\wwidocs-rs\target\debug\ 
-wwidocs-rs.exe -cdb:itm.str.sga
+cd c:\rbrust\wwidocs\target\debug\ 
+wwidocs.exe -cdb:itm.str.sga
 pause

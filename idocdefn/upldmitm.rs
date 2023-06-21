@@ -1,9 +1,11 @@
-// upld_mitmdata: Get IDoc item data (records, groups, segments and fields) and
-// Create corresponding item records in the database
+//**********************************************************************************
+// upld_mitmdata.rs: Get IDoc item data (records, groups, segments and fields) and *
+// Create corresponding item records in the database                               *
+//**********************************************************************************
 use crate::idocdefn::rdparser::*;
-use crate::idocdefn::upldsgrp::{KeystTp};
+use crate::idocdefn::upldsgrp::KeystTp;
 use crate::idocdefn::ldtables::*;
-use rusqlite::{Connection};
+use rusqlite::Connection;
 
 pub const IDOC           : &str = "IDOC";
 pub const EXTENSION      : &str = "EXTENSION";

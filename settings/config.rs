@@ -1,4 +1,6 @@
-// config,rs: Reads config file and gets run parameters
+//**********************************************************************************
+// config,rs: Reads config file and gets run parameters                            *
+//**********************************************************************************
 use serde::Deserialize;
 use serde_json;
 use std::env;

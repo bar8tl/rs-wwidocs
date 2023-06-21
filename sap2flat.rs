@@ -2,9 +2,8 @@
 // sap2flat.rs: Convert IDoc classic hierarchical format to flat text file format  *
 // [20170524-BAR8TL]                                                               *
 //**********************************************************************************
-use crate::settings::params::{ParameTp};
-use crate::settings::{SettingsTp};
-use rusqlite::{Connection};
+use crate::settings::SettingsTp;
+use rusqlite::Connection;
 use std::fs;
 use std::fs::File;
 use std::io::{BufRead, BufReader, Write};
@@ -65,8 +64,7 @@ struct ConvertTp {
   l    : usize
 }
 
-pub fn convert_idoc2flat(parm: ParameTp, mut stg: SettingsTp) {
-  stg.set_runvars(parm);
+pub fn conv_idoc2flat(stg: SettingsTp) {
   let mut c = ConvertTp { ..Default::default() };
   let cnn = Connection::open(&stg.dbopt).expect("DB Error");
   c.cntrl = stg.cntrl.clone();

@@ -1,4 +1,6 @@
-// params: Gets a list of command-line parameters
+//**********************************************************************************
+// params.rs: Gets a list of command-line parameters                               *
+//**********************************************************************************
 use std::env;
 
 #[derive(Debug, Clone, Default)]

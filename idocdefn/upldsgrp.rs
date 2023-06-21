@@ -1,9 +1,11 @@
-// upldsgrp: Get IDoc groups structure data and to create corresponding structure
-// records in the database
+//**********************************************************************************
+// upldsgrp.rs: Get IDoc groups structure data and to create corresponding         *
+// structure records in the database                                               *
+//**********************************************************************************
+use crate::idocdefn::ldtables::*;
 use crate::idocdefn::rdparser::*;
 use crate::idocdefn::upldmitm::{BEGIN, END, IDOC, GROUP, EXTENSION};
-use crate::idocdefn::ldtables::*;
-use rusqlite::{Connection};
+use rusqlite::Connection;
 
 #[derive(Debug, Clone, Default)]
 pub struct KeystTp { // Structure Node Attributes

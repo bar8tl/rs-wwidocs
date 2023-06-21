@@ -18,6 +18,7 @@ xcopy c:\c-portab\01-rb\pgmfiles\wwidocs\main.rs              . /D /C /Y
 xcopy c:\c-portab\01-rb\pgmfiles\wwidocs\sap2flat.rs       . /D /C /Y
 xcopy c:\c-portab\01-rb\pgmfiles\wwidocs\settings.rs          . /D /C /Y
 xcopy c:\c-portab\01-rb\pgmfiles\wwidocs\sgmalias.rs          . /D /C /Y
+xcopy c:\c-portab\01-rb\pgmfiles\wwidocs\wrkquery.rs          . /D /C /Y
 cd ..\target\debug
 xcopy c:\c-portab\01-rb\pgmfiles\wwidocs\_config.json      . /D /C /Y
 cd ..\..
