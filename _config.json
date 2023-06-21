@@ -1,0 +1,100 @@
+{
+  "konst": {
+    "CNTRL": "EDI_DC40",
+    "CLIEN": "011"
+  },
+  "progm": {
+    "dbonm": "idoctp.db",
+    "dbodr": ".\\",
+    "inpdr": ".\\idoctypes\\",
+    "outdr": ".\\",
+    "ifilt": "!(*processed*)",
+    "inpnm": "rundt+'_'+idocn+docno+docdt+'_inp_processed'",
+    "outnm": "rundt+'_'+idocn+docno+docdt+'_out'"
+  },
+  "run": [
+    {
+      "optn" : "upl", "objnm": "_-rb04_-yc1_pexr2002.txt"
+    },
+    {
+      "optn" : "upl", "objnm": "_-rb04_-yp3_invoic02_xml.txt"
+    },
+    {
+      "optn" : "dat", "objnm": "/rb04/yp3_invoic02_xml",
+      "inpdr": ".\\fidoc_invxml\\input\\",
+      "outdr": ".\\fidoc_invxml\\output\\"
+    },
+    {
+      "optn" : "dat", "objnm": "/rb04/yc1_pexr2002",
+      "inpdr": ".\\fidoc_pexr2002\\input\\",
+      "outdr": ".\\fidoc_pexr2002\\output\\"
+    },
+    {
+      "optn" : "dat", "objnm": "delfor02",
+      "inpdr": ".\\fidoc_delfor\\input\\",
+      "outdr": ".\\fidoc_delfor\\output\\"
+    },
+    {
+      "optn" : "dat", "objnm": "seqjit03",
+      "inpdr": ".\\fidoc_seqjit\\input\\",
+      "outdr": ".\\fidoc_seqjit\\output\\"
+    },
+    {
+      "optn" : "dat", "objnm": "y04vseqjit03",
+      "inpdr": ".\\fidoc_seqjit\\input\\",
+      "outdr": ".\\fidoc_seqjit\\output\\"
+    },
+    {
+      "optn" : "qry", "objnm": "/rb04/yp3_invoic02_xml",
+      "qrynm" : "query_invxml.json",
+      "inpdr": ".\\qidoc_invxml\\input\\",
+      "outdr": ".\\qidoc_invxml\\output\\",
+      "qrydr": ".\\qidoc_invxml\\query\\"
+    },
+    {
+      "optn" : "cnv", "objnm": "/rb04/yp3_invoic02_xml",
+      "inpdr": ".\\hidoc_invxml\\input\\",
+      "outdr": ".\\hidoc_invxml\\output\\",
+      "rcprf": "RE"
+    },
+    {
+      "optn" : "unf", "objnm": "z48v_invoic02_ex",
+      "inpdr": ".\\hidoc_invxml_atmo\\input\\",
+      "outdr": ".\\hidoc_invxml_atmo\\output\\",
+      "rcprf": "RE"
+    },
+    {
+      "optn" : "unf", "objnm": "/rb04/yp3_invoic02",
+      "inpdr": ".\\hidoc_invo\\input\\",
+      "outdr": ".\\hidoc_invo\\output\\",
+      "rcprf": "RE"
+    },
+    {
+      "optn" : "unf", "objnm": "/rb04/yp3_invoic02_cu",
+      "inpdr": ".\\hidoc_invocu\\input\\",
+      "outdr": ".\\hidoc_invocu\\output\\",
+      "rcprf": "RE"
+    },
+    {
+      "optn" : "unf", "objnm": "delvry03",
+      "inpdr": ".\\hidoc_whscon\\input\\",
+      "outdr": ".\\hidoc_whscon\\output\\",
+      "rcprf": "SH"
+    },
+    {
+      "optn" : "unf", "objnm": "/rb04/yp3_delvry_rbna",
+      "inpdr": ".\\hidoc_asn\\input\\",
+      "outdr": ".\\hidoc_asn\\output\\",
+      "rcprf": "SH"
+    },
+    {
+      "optn" : "usa", "objnm": "_segma.json",
+      "inpdr": ".\\idoctypes\\"
+    }
+  ],
+  "cdb": [
+    { "id": "itm", "table": "items", "cr": true },
+    { "id": "str", "table": "struc", "cr": true },
+    { "id": "sga", "table": "segma", "cr": true }
+  ]
+}
