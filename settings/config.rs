@@ -3,7 +3,6 @@
 //**********************************************************************************
 use serde::Deserialize;
 use serde_json;
-use std::env;
 use std::fs::File;
 
 #[derive(Debug, Clone, Default, Deserialize)]

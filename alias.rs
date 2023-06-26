@@ -1,5 +1,5 @@
 //**********************************************************************************
-// sgmalias.rs: Upload _segma.json file for segment aliases [20170524-BAR8TL]      *
+// alias.rs: Upload _segma.json file for segment aliases [20170524-BAR8TL]         *
 //**********************************************************************************
 use crate::settings::SettingsTp;
 use rusqlite::Connection;

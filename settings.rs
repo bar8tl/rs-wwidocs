@@ -1,6 +1,8 @@
 //**********************************************************************************
 // settings.rs: Define pgm-level & run-level settings [20170524-BAR8TL]            *
 //**********************************************************************************
+#![allow(non_snake_case)]
+
 mod config;
 mod params;
 
@@ -95,19 +97,19 @@ impl SettingsTp {
     self.found = false;
     for run in &self.cfd.run {
       if p.optn == run.optn && p.prm1 == run.objnm {
-        if p.optn == "cdb" || p.optn == "upl" || p.optn == "cnv" ||
-           p.optn == "fmt" || p.optn == "usa" || p.optn == "qry" {
+        if p.optn == "cdb" || p.optn == "def" || p.optn == "pck" ||
+           p.optn == "upk" || p.optn == "ali" || p.optn == "qry" {
           if run.objnm.len() > 0 { self.objnm = run.objnm.clone(); }
           if run.dbonm.len() > 0 { self.dbonm = run.dbonm.clone(); }
           if run.dbodr.len() > 0 { self.dbodr = run.dbodr.clone(); }
           self.dbopt = format!("{}{}", self.dbodr, self.dbonm);
         }
-        if p.optn == "upl" || p.optn == "cnv" || p.optn == "fmt" ||
-           p.optn == "usa" || p.optn == "qry" {
+        if p.optn == "def" || p.optn == "pck" || p.optn == "upk" ||
+           p.optn == "ali" || p.optn == "qry" {
           if run.inpdr.len() > 0 { self.inpdr = run.inpdr.clone(); }
           if run.outdr.len() > 0 { self.outdr = run.outdr.clone(); }
         }
-        if p.optn == "cnv" || p.optn == "fmt" || p.optn == "usa" {
+        if p.optn == "pck" || p.optn == "upk" || p.optn == "ali" {
           if run.ifilt.len() > 0 { self.ifilt = run.ifilt.clone(); }
           if run.ifnam.len() > 0 { self.ifnam = run.ifnam.clone(); }
           if run.ofnam.len() > 0 { self.ofnam = run.ofnam.clone(); }
@@ -117,7 +119,7 @@ impl SettingsTp {
           if run.qrydr.len() > 0 { self.qrydr = run.qrydr.clone(); }
           if run.qrynm.len() > 0 { self.qrynm = run.qrynm.clone(); }
         }
-        if p.optn == "upl" {
+        if p.optn == "def" {
           self.mitm = true;
           self.sgrp = false;
           self.ssgm = false;

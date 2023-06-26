@@ -20,7 +20,7 @@
       "optn" : "upl", "objnm": "_-rb04_-yp3_invoic02_xml.txt"
     },
     {
-      "optn" : "dat", "objnm": "/rb04/yp3_invoic02_xml",
+      "optn" : "fmt", "objnm": "/rb04/yp3_invoic02_xml",
       "inpdr": ".\\fidoc_invxml\\input\\",
       "outdr": ".\\fidoc_invxml\\output\\"
     },

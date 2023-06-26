@@ -2,11 +2,11 @@
 // upld_ssgmdata.rs: Get IDoc segments structure data and to create corresponding  *
 // structure records in ref database                                               *
 //**********************************************************************************
-use crate::idocdefn::rdparser::*;
-use crate::idocdefn::upldsgrp::KeystTp;
-use crate::idocdefn::upldmitm::{BEGIN, END, IDOC, SEGMENT, EXTENSION, FIELDS,
+use crate::definitn::rdparser::*;
+use crate::definitn::upldsgrp::KeystTp;
+use crate::definitn::upldmitm::{BEGIN, END, IDOC, SEGMENT, EXTENSION, FIELDS,
   QUALIFIED, QUALF, LEVEL};
-use crate::idocdefn::ldtables::*;
+use crate::definitn::ldtables::*;
 use rusqlite::Connection;
 
 const SEGMENTTYPE: &str = "SEGMENTTYPE";
@@ -23,7 +23,7 @@ pub struct UpldssgmTp {
   pub sseqn:  usize
 }
 
-pub fn init_upldssgm(us: &mut UpldssgmTp, strtp: String) {
+pub fn init_upldssgm(us: &mut UpldssgmTp, strtp: &str) {
   us.strtp = strtp.to_uppercase();
   us.stack.push(KeystTp { ..Default::default() });
   us.l = 0;

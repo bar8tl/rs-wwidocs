@@ -15,7 +15,7 @@ pub struct ParslTp {
   pub value: String
 }
 
-pub fn scan_inpline(s: String) -> ParslTp {
+pub fn scan_inpline(s: &str) -> ParslTp {
   let key: String;
   let mut val: String;
   let mut p = ParslTp { ..Default::default() };
@@ -36,8 +36,8 @@ pub fn scan_inpline(s: String) -> ParslTp {
       }
     } else {
       p.label.ident = key;
-      p.label.recnm = Default::default();
-      p.label.rectp = Default::default();
+      p.label.recnm = String::new();
+      p.label.rectp = String::new();
     }
   }
   if flds.len() > 1 {

@@ -2,9 +2,8 @@
 // upld_mitmdata.rs: Get IDoc item data (records, groups, segments and fields) and *
 // Create corresponding item records in the database                               *
 //**********************************************************************************
-use crate::idocdefn::rdparser::*;
-use crate::idocdefn::upldsgrp::KeystTp;
-use crate::idocdefn::ldtables::*;
+use crate::definitn::rdparser::*;
+use crate::definitn::ldtables::*;
 use rusqlite::Connection;
 
 pub const IDOC           : &str = "IDOC";
@@ -229,6 +228,27 @@ pub struct ItemsTp { // ITEMS fields description (*=key field in DB record)
   pub seqno: usize,  //  0           auto-gen    Auto-gen    Field-Seqn  Field-Seqn
   pub strps: usize,  //  0           0           0           Start-Pos   Start-Pos
   pub endps: usize   //  0           0           0           End-Pos     End-Pos
+}
+
+#[derive(Debug, Clone, Default)]
+pub struct StrucTp { // IDoc-Structure Descr (*=key field in DB record)
+//    Field:         //  GROUP                   SEGMENT
+//-----------------------------------------------------------------------
+  pub idocn: String, //* Ex/Ba-Name              Ex/Ba-Name
+  pub strtp: String, //* 'GRP'                   'SGM'
+  pub level: usize,  //  auto-gen                auto-gen
+  // PARENT
+  pub prnam: String, //* p.rname='IDOC'/'GROUP'  p.rname='SEGMENT'
+  pub pseqn: usize,  //* p.pseqn=autogen         p.pseqn=autogen
+  pub pdnam: String, //* p.dname=Group#          p.dname=Segm-ID
+  pub pdtyp: String, //  ''                      p.dtype=Segm-Type
+  pub pdqlf: String, //  ''                      'QUAL'
+  // CHILD
+  pub crnam: String, //* c.rname='GROUP          c.rname*=Segm-ID
+  pub cseqn: usize,  //* p.seqno=Group-Seq       p.seqno*=Seqno
+  pub cdnam: String, //* c.dname=Group#          c.dname*=Segm/Field-Name
+  pub cdtyp: String, //  ''                      c.dtype =Segm/Field-Type
+  pub cdqlf: String //  ''                      'QUAL'
 }
 
 pub fn isrt_mitmdata(cnn: &Connection, ui: &mut UpldmitmTp) {

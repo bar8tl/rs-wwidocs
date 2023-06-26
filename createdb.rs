@@ -1,5 +1,5 @@
 //**********************************************************************************
-// dbcreatn: Selected DB tables creation [20170524-BAR8TL]                         *
+// createdb: Selected DB tables creation [20170524-BAR8TL]                         *
 //**********************************************************************************
 use crate::settings::SettingsTp;
 use rusqlite::{Connection, Result};

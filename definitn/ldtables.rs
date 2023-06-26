@@ -1,8 +1,8 @@
 //**********************************************************************************
 // ldtables.rs: Maintain IDoc definition tables into reference DB [20170524-BAR8TL]*
 //**********************************************************************************
-use crate::idocdefn::upldmitm::ItemsTp;
-use crate::idocdefn::upldsgrp::KeystTp;
+use crate::definitn::upldmitm::ItemsTp;
+use crate::definitn::upldsgrp::KeystTp;
 use crate::settings::GRP;
 use rusqlite::Connection;
 

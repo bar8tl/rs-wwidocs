@@ -2,9 +2,9 @@
 // upldsgrp.rs: Get IDoc groups structure data and to create corresponding         *
 // structure records in the database                                               *
 //**********************************************************************************
-use crate::idocdefn::ldtables::*;
-use crate::idocdefn::rdparser::*;
-use crate::idocdefn::upldmitm::{BEGIN, END, IDOC, GROUP, EXTENSION};
+use crate::definitn::ldtables::*;
+use crate::definitn::rdparser::*;
+use crate::definitn::upldmitm::{BEGIN, END, IDOC, GROUP, EXTENSION};
 use rusqlite::Connection;
 
 #[derive(Debug, Clone, Default)]
@@ -29,7 +29,7 @@ pub struct UpldsgrpTp {
   pub gseqn:  usize
 }
 
-pub fn init_upldsgrp(ug: &mut UpldsgrpTp, strtp: String) {
+pub fn init_upldsgrp(ug: &mut UpldsgrpTp, strtp: &str) {
   ug.strtp = strtp.to_uppercase();
   ug.stack.push(KeystTp { ..Default::default() });
   ug.l = 0;

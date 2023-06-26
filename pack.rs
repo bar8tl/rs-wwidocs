@@ -1,7 +1,9 @@
 //**********************************************************************************
-// sap2flat.rs: Convert IDoc classic hierarchical format to flat text file format  *
+// pack.rs: Convert IDoc classic hierarchical format to flat text file format      *
 // [20170524-BAR8TL]                                                               *
 //**********************************************************************************
+#![allow(non_snake_case)]
+
 use crate::settings::SettingsTp;
 use rusqlite::Connection;
 use std::fs;
@@ -154,8 +156,8 @@ fn proc_file(cnn: &Connection, c: &mut ConvertTp, inppt: String) {
 
     println!("{}", c.idocn);
   }
-  //ren_file("inp", &c.inpdr, &c.flnam, &c.flext);
-  //ren_file("out", &c.outdr, &c.flnam, &c.flext);
+  ren_file("inp", &c.inpdr, &c.flnam, &c.flext);
+  ren_file("out", &c.outdr, &c.flnam, &c.flext);
 }
 
 // Function to setup measures to take for each data section. Each new section
@@ -362,5 +364,8 @@ pub fn ren_file(mode: &str, curdr: &str, fnm: &str, fex: &str) {
 
 // Indicates if a char string matches one pattern
 pub fn pass_filter(ifilt: &String, filen: &str) -> bool {
+  if filen == ifilt {
+    return true;
+  }
   true
 }
