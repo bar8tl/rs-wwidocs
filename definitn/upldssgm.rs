@@ -19,14 +19,13 @@ pub struct UpldssgmTp {
   pub snode:  KeystTp,
   pub idocn:  String,
   pub strtp:  String,
-  pub l    :  usize,
+  pub l    :  i32,
   pub sseqn:  usize
 }
 
 pub fn init_upldssgm(us: &mut UpldssgmTp, strtp: &str) {
-  us.strtp = strtp.to_uppercase();
-  us.stack.push(KeystTp { ..Default::default() });
-  us.l = 0;
+  us.strtp = strtp.to_lowercase();
+  us.l = -1;
 }
 
 pub fn get_ssgmdata(cnn: &Connection, sline: &ParslTp, us: &mut UpldssgmTp) {
@@ -57,11 +56,11 @@ pub fn get_ssgmdata(cnn: &Connection, sline: &ParslTp, us: &mut UpldssgmTp) {
 
   if sline.label.ident == END && us.l >= 0 {
     if sline.label.recnm == IDOC {
-      us.stack = us.stack[..us.l].to_vec();
+      us.stack = us.stack[..us.l as usize].to_vec();
       us.l -= 1;
     } else if sline.label.recnm == SEGMENT && sline.label.rectp.len() == 0 {
       if us.l == 0 {
-        us.stack[us.l].seqno += 1;
+        us.stack[us.l as usize].seqno += 1;
         us.stack.push(KeystTp {
           rname: us.tnode.rname.clone(),
           dname: us.tnode.dname.clone(),
@@ -72,15 +71,15 @@ pub fn get_ssgmdata(cnn: &Connection, sline: &ParslTp, us: &mut UpldssgmTp) {
           seqno: 0
         });
         us.l += 1;
-      } else if us.tnode.level <= us.stack[us.l].level {
-        while us.tnode.level <= us.stack[us.l].level {
+      } else if us.tnode.level <= us.stack[us.l as usize].level {
+        while us.tnode.level <= us.stack[us.l as usize].level {
           isrt_struc(cnn, us.idocn.clone(), us.strtp.clone(),
-            us.stack[us.l-1].clone(),
-            us.stack[us.l  ].clone());
-          us.stack = us.stack[..us.l].to_vec();
+            us.stack[us.l as usize-1].clone(),
+            us.stack[us.l as usize  ].clone());
+          us.stack = us.stack[..us.l as usize].to_vec();
           us.l -= 1;
         }
-        us.stack[us.l].seqno += 1;
+        us.stack[us.l as usize].seqno += 1;
         us.stack.push(KeystTp {
           rname: us.tnode.rname.clone(),
           dname: us.tnode.dname.clone(),
@@ -91,8 +90,8 @@ pub fn get_ssgmdata(cnn: &Connection, sline: &ParslTp, us: &mut UpldssgmTp) {
           seqno: 0
         });
         us.l += 1;
-      } else if us.tnode.level > us.stack[us.l].level {
-        us.stack[us.l].seqno += 1;
+      } else if us.tnode.level > us.stack[us.l as usize].level {
+        us.stack[us.l as usize].seqno += 1;
         us.stack.push(KeystTp {
           rname: us.tnode.rname.clone(),
           dname: us.tnode.dname.clone(),

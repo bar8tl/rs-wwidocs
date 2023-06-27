@@ -77,7 +77,7 @@ pub struct UpldmitmTp<'a> {
   pub colss: [String; 7],   // Name, Type, Qual, Levl, Stat, Mnlp, Mxlp
   pub colsf: [String; 7],   // Name, Text, Type, Lgth, Seqn, Strp, Endp
   pub colsr: [String; 7],   // Name, Text, Type, Lgth, Seqn, Strp, Endp
-  pub l    :  usize,        // Stack level
+  pub l    :  i32,          // Stack level
   pub gseqn:  usize,        // Group   counter
   pub sseqn:  usize         // Segment counter
 }
@@ -87,8 +87,7 @@ pub fn init_upldmitm(ui: &mut UpldmitmTp) {
   ui.gcol = vec![LEVEL, STATUS, LOOPMIN, LOOPMAX];
   ui.scol = vec![SEGMENTTYPE, QUALIFIED, LEVEL, STATUS, LOOPMIN, LOOPMAX];
   ui.fcol = vec![NAME, TEXT, TYPE, LENGTH, FIELD_POS, CHARACTER_FIRST, CHARACTER_LAST];
-  ui.stack.push(ParslTp { ..Default::default() });
-  ui.l = 0;
+  ui.l = -1;
 }
 
 // Scan SAP parser file to identify IDoc elements
@@ -107,26 +106,28 @@ pub fn get_mitmdata(sline: &ParslTp, ui: &mut UpldmitmTp) {
         ui.colsi[1] = sline.value.clone();
         ui.lidoc.push(IdcdfTp {
           name: ui.colsi[0].clone(),
-          typi: ui.stack[ui.l].label.recnm.clone(),
+          typi: ui.stack[ui.l as usize].label.recnm.clone(),
           cols: ui.colsi.clone()
         });
       } else if sline.label.recnm == GROUP   {
         ui.colsg[0] = sline.value.clone();
       } else if sline.label.recnm == SEGMENT {
         ui.colss[0] = sline.value.clone();
-        ui.colss[2] = Default::default();
+        ui.colss[2] = String::new();
       }
     }
     return;
   }
 
-  if sline.label.ident == END {
+  if sline.label.ident == END { 
     ui.l -= 1;
-    ui.stack = ui.stack[..ui.l+1].to_vec();
+    if ui.l > -1 {
+      ui.stack = ui.stack[..ui.l as usize+1].to_vec();
+    }
     return;
   }
 
-  if ui.stack[ui.l].label.recnm == IDOC {
+  if ui.stack[ui.l as usize].label.recnm == IDOC {
     for i in 0..ui.icol.len() {
       if sline.label.ident == ui.icol[i] {
         ui.colsi[i+1] = sline.value.clone();
@@ -138,7 +139,7 @@ pub fn get_mitmdata(sline: &ParslTp, ui: &mut UpldmitmTp) {
     }
   }
 
-  if ui.stack[ui.l].label.recnm == GROUP {
+  if ui.stack[ui.l as usize].label.recnm == GROUP {
     for i in 0..ui.gcol.len() {
       if sline.label.ident == ui.gcol[i] {
         ui.colsg[i+1] = sline.value.clone();
@@ -146,7 +147,7 @@ pub fn get_mitmdata(sline: &ParslTp, ui: &mut UpldmitmTp) {
           ui.gseqn += 1;
           ui.lgrup.push(GrpdfTp {
             name: ui.colsg[0].clone(),
-            typi: ui.stack[ui.l].label.recnm.clone(),
+            typi: ui.stack[ui.l as usize].label.recnm.clone(),
             seqn: ui.gseqn.clone(),
             cols: ui.colsg.clone()
           });
@@ -156,7 +157,7 @@ pub fn get_mitmdata(sline: &ParslTp, ui: &mut UpldmitmTp) {
     }
   }
 
-  if ui.stack[ui.l].label.recnm == SEGMENT {
+  if ui.stack[ui.l as usize].label.recnm == SEGMENT {
     for i in 0..ui.scol.len() {
       if sline.label.ident == ui.scol[i] {
         if sline.label.ident == QUALIFIED {
@@ -168,7 +169,7 @@ pub fn get_mitmdata(sline: &ParslTp, ui: &mut UpldmitmTp) {
           ui.sseqn += 1;
           ui.lsegm.push(SegdfTp {
             name: ui.colss[0].clone(),
-            typi: ui.stack[ui.l].label.recnm.clone(),
+            typi: ui.stack[ui.l as usize].label.recnm.clone(),
             seqn: ui.sseqn.clone(),
             cols: ui.colss.clone()
           });
@@ -178,7 +179,7 @@ pub fn get_mitmdata(sline: &ParslTp, ui: &mut UpldmitmTp) {
     }
   }
 
-  if ui.stack[ui.l].label.recnm == FIELDS {
+  if ui.stack[ui.l as usize].label.recnm == FIELDS {
     let mut mtch = false;
     for i in 0..ui.fcol.len() {
       if sline.label.ident == ui.fcol[i] {
@@ -186,18 +187,18 @@ pub fn get_mitmdata(sline: &ParslTp, ui: &mut UpldmitmTp) {
         mtch = true;
       }
       if i == ui.fcol.len()-1 {
-        if ui.stack[ui.l-1].label.rectp == RECORD {
+        if ui.stack[ui.l as usize-1].label.rectp == RECORD {
           ui.lrecd.push(FlddfTp {
-            name: ui.stack[ui.l-1].label.recnm.clone(),
-            typi: ui.stack[ui.l  ].label.recnm.clone(),
-            clas: ui.stack[ui.l-1].label.rectp.clone(),
+            name: ui.stack[ui.l as usize-1].label.recnm.clone(),
+            typi: ui.stack[ui.l as usize  ].label.recnm.clone(),
+            clas: ui.stack[ui.l as usize-1].label.rectp.clone(),
             cols: ui.colsf.clone()
           });
-        } else if ui.stack[ui.l-1].label.recnm == SEGMENT {
+        } else if ui.stack[ui.l as usize-1].label.recnm == SEGMENT {
           ui.lfild.push(FlddfTp{
             name: ui.colss[0].clone(),
-            typi: ui.stack[ui.l  ].label.recnm.clone(),
-            clas: ui.stack[ui.l-1].label.recnm.clone(),
+            typi: ui.stack[ui.l as usize  ].label.recnm.clone(),
+            clas: ui.stack[ui.l as usize-1].label.recnm.clone(),
             cols: ui.colsf.clone()
           });
         }

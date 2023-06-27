@@ -54,7 +54,7 @@ fn proc_file(cnn: &Connection, d: &mut DidocTp, inppt: &String, idocn: &String) 
     let iline = wline.trim();
     cnt += 1;
     if cnt == 1usize {
-      if &iline[0..10] == "EDI_DC40" {
+      if &iline[0..8] == "EDI_DC40" {
         read_control(cnn, d, iline, idocn, "CONTROL", false).expect("DB Error");
       } else {
         println!("IDOC File {} should start with Control Record", d.flide);

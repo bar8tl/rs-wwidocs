@@ -30,6 +30,7 @@ pub fn clear_struc(cnn: &Connection, idocn: String, strtp: String) {
 
 pub fn isrt_struc(cnn: &Connection, idocn: String, strtp: String, pnode: KeystTp,
   cnode: KeystTp) {
+  println!("strtp: {}", strtp);
   let mut pdnam: String = Default::default();
   let mut cdnam: String = Default::default();
   if strtp == GRP {
