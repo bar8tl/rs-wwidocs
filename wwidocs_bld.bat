@@ -10,6 +10,10 @@ xcopy c:\c-portab\01-rb\pgmfiles\wwidocs\definitn\ldtables.rs . /D /C /Y
 xcopy c:\c-portab\01-rb\pgmfiles\wwidocs\definitn\upldmitm.rs . /D /C /Y
 xcopy c:\c-portab\01-rb\pgmfiles\wwidocs\definitn\upldsgrp.rs . /D /C /Y
 xcopy c:\c-portab\01-rb\pgmfiles\wwidocs\definitn\upldssgm.rs . /D /C /Y
+cd ..\pack\
+xcopy c:\c-portab\01-rb\pgmfiles\wwidocs\pack\build.rs        . /D /C /Y
+xcopy c:\c-portab\01-rb\pgmfiles\wwidocs\pack\dump.rs         . /D /C /Y
+xcopy c:\c-portab\01-rb\pgmfiles\wwidocs\pack\setup.rs        . /D /C /Y
 cd ..\unpack\
 xcopy c:\c-portab\01-rb\pgmfiles\wwidocs\unpack\control.rs    . /D /C /Y
 xcopy c:\c-portab\01-rb\pgmfiles\wwidocs\unpack\data.rs       . /D /C /Y

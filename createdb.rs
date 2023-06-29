@@ -1,5 +1,5 @@
 //**********************************************************************************
-// createdb: Selected DB tables creation [20170524-BAR8TL]                         *
+// createdb.rs : IDOC definition DB tables creation (2017-05-24 bar8tl)
 //**********************************************************************************
 use crate::settings::SettingsTp;
 use rusqlite::{Connection, Result};
@@ -52,8 +52,7 @@ pub fn crt_tables(s: SettingsTp) {
   crt_table(&cnn, &s.dbopt, &tlist).expect("Table creation error");
 }
 
-fn crt_table(cnn: &Connection, dbopt: &String, tlist: &Vec<TlistTp>) ->
-  Result<()> {
+fn crt_table(cnn: &Connection, dbopt: &String, tlist: &Vec<TlistTp>) -> Result<()> {
   for tabl in tlist {
     cnn.execute(format!("DROP TABLE IF EXISTS {}", tabl.table).as_str(), [])?;
     cnn.execute(tabl.sqlst.as_str(), [])?;

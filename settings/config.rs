@@ -1,5 +1,5 @@
 //**********************************************************************************
-// config,rs: Reads config file and gets run parameters                            *
+// config.rs : Reads config file and gets run parameters (2017-05-24 bar8tl)
 //**********************************************************************************
 use serde::Deserialize;
 use serde_json;

@@ -1,5 +1,5 @@
 //**********************************************************************************
-// main.rs: Starts processes to work with SAP IDOCs [20170524-BAR8TL]              *
+// main.rs : Starts processes to work with SAP IDOCs (2017-05-24 bar8tl)
 //**********************************************************************************
 mod alias;
 mod createdb;

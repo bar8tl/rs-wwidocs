@@ -1,6 +1,6 @@
 //**********************************************************************************
-// unpack.rs: Read SAP-Idoc content in standard flat TXT format and upload data    *
-// into internal structures [20170524-BAR8TL]                                      *
+// unpack.rs : Read SAP-Idoc content in standard flat TXT format and upload data
+// into internal structures (2017-05-24 bar8tl)
 //**********************************************************************************
 mod control;
 mod data;

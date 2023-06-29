@@ -1,4 +1,8 @@
-// Process Control Record                                                          *
+//**********************************************************************************
+// control.rs : Process Control Record (2017-05-24 bar8tl)
+//**********************************************************************************
+#![allow(unused_assignments)]
+
 use crate::definitn::upldmitm::ItemsTp;
 use crate::unpack::data::{DidocTp, RsegmTp, FieldTp};
 use crate::unpack::outputs::write_outputs;
@@ -20,7 +24,7 @@ pub fn read_control(cnn: &Connection, d: &mut DidocTp, iline: &str, idocn: &Stri
    rname: &str, first: bool) -> Result<()> {
   let mut f    : ItemsTp = ItemsTp{ ..Default::default() };
   let mut rctrl: RctrlTp = RctrlTp{ ..Default::default() };
-  let mut cdval: String  = Default::default();
+  let mut cdval: String  = String::new();
   if !first {
     write_outputs(d);
   }

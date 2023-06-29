@@ -1,4 +1,8 @@
-// Process Data Record                                                             *
+//**********************************************************************************
+// data.rs : Process Data Record (2017-05-24 bar8tl)
+//**********************************************************************************
+#![allow(unused_assignments)]
+
 use crate::definitn::upldmitm::{ItemsTp, StrucTp};
 use crate::unpack::control::LctrlTp;
 use serde::Serialize;
@@ -110,7 +114,7 @@ pub fn read_data(cnn: &Connection, d: &mut DidocTp, iline: &str, idocn: &String,
   d.recnf += 1;
   d.recno += 1;
   let mut stmt = cnn.prepare("SELECT dname, strps, endps FROM items WHERE idocn=?1
-    and rname=?2 order by seqno;")?;
+    AND rname=?2 order by seqno;")?;
   let mut rows = stmt.query([idocn, &rname.to_string(),])?;
   while let Some(row) = rows.next().expect("while row failed") {
     f.dname = row.get(0)?;
@@ -122,10 +126,10 @@ pub fn read_data(cnn: &Connection, d: &mut DidocTp, iline: &str, idocn: &String,
     }
     if f.dname == "SEGNAM" {
       let mut dname: String = String::new();
-      cnn.query_row("select segtp from segma where idocn=?1 and segdf=?2;",
+      cnn.query_row("SELECT segtp FROM segma WHERE idocn=?1 AND segdf=?2;",
         [idocn, &cdval,], |row| { Ok({ dname = row.get(0).unwrap(); })})?;
       cnn.query_row("SELECT dname, dtype, dtext, level FROM items WHERE idocn=?1
-        and dname=?2 and rname=\"SEGMENT\";", [idocn, &dname,], |row| {
+        AND dname=?2 AND rname=\"SEGMENT\";", [idocn, &dname,], |row| {
         Ok({
           g.dname = row.get(0).unwrap();
           g.dtype = row.get(1).unwrap();
@@ -148,11 +152,9 @@ pub fn read_data(cnn: &Connection, d: &mut DidocTp, iline: &str, idocn: &String,
   Ok(())
 }
 
-//**********************************************************************************
-// Process Segment Data - Determines segment Qualifier and Instance Number         *
-//**********************************************************************************
+// Process Segment Data - Determines segment Qualifier and Instance Number
 fn proc_segment(cnn: &Connection, d: &mut DidocTp, iline: &str, idocn: &String,
-   strtp: &str, cdnam: &String, level: usize) {
+   _strtp: &str, cdnam: &String, level: usize) {
   let mut instn: usize = 0;
   let mut ident: String = String::new();
   if level == d.l {
@@ -165,7 +167,7 @@ fn proc_segment(cnn: &Connection, d: &mut DidocTp, iline: &str, idocn: &String,
     ident = "LOWER".to_string();
   } else if level < d.l {
     let goupl: usize = d.l - level;
-    for i in 0..goupl {
+    for _ in 0..goupl {
       d.count[d.l] = Default::default();
       d.l -= 1;
     }
@@ -199,7 +201,7 @@ fn rtrv_counter(d: &mut DidocTp, segmn: String, l: usize) -> usize {
 
 // Build segment structure into an non-linked segment node
 fn add_tostruct(cnn: &Connection, d: &mut DidocTp, iline: &str, idocn: &String,
-   ident: String, segmn: String, l: usize, instn: usize) {
+   _ident: String, segmn: String, l: usize, instn: usize) {
   if d.recno <= 9999 {
     d.sfild.qlkey = "".to_string();
     d.sfild.qlval = "".to_string();
@@ -275,7 +277,7 @@ fn add_tostruct(cnn: &Connection, d: &mut DidocTp, iline: &str, idocn: &String,
 
 //Get field values of a segment into the IDOC structure
 fn get_segmdata(cnn: &Connection, d: &mut DidocTp, iline: &str, idocn: &String,
-   strtp: String, cdnam: &String, level: usize) -> Result<()> {
+   strtp: String, cdnam: &String, _level: usize) -> Result<()> {
   let mut f    : ItemsTp = Default::default();
   let mut e    : StrucTp = Default::default();
   let mut cdval: String  = String::new();

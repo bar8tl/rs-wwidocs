@@ -1,4 +1,6 @@
-// Generate outputs
+//**********************************************************************************
+// outputs.rs : Generate outputs (2017-05-24 bar8tl)
+//**********************************************************************************
 use crate::unpack::data::{DidocTp, SdataTp, SsegmTp};
 use serde_json;
 use std::fs::File;

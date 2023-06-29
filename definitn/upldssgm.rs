@@ -1,6 +1,6 @@
 //**********************************************************************************
-// upld_ssgmdata.rs: Get IDoc segments structure data and to create corresponding  *
-// structure records in ref database                                               *
+// upldssgm.rs : Get IDoc segments structure data and to create corresponding
+// structure records in definition database (2017-05-24 bar8tl)
 //**********************************************************************************
 use crate::definitn::rdparser::*;
 use crate::definitn::upldsgrp::KeystTp;
@@ -24,7 +24,7 @@ pub struct UpldssgmTp {
 }
 
 pub fn init_upldssgm(us: &mut UpldssgmTp, strtp: &str) {
-  us.strtp = strtp.to_lowercase();
+  us.strtp = strtp.to_uppercase();
   us.l = -1;
 }
 

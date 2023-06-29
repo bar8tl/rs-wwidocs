@@ -1,6 +1,6 @@
 //**********************************************************************************
-// definitn.rs: Read SAP IDoc parser file, and upload IDoc definition detail and   *
-// structure into an internal database [20170524-BAR8TL]                           *
+// definitn.rs : Read SAP IDoc parser file, and upload IDoc definition detail and
+// structure into an internal database (2017-05-24 bar8tl)
 //**********************************************************************************
 pub mod upldmitm;
 mod ldtables;
@@ -19,9 +19,8 @@ use std::io::{BufRead, BufReader};
 
 // Main logic to process: 1) Master data for IDoc Items, 2) Structure for groups,
 // and 3) Structure for segments
-pub fn upld_idocdefn(stg: SettingsTp) {
-  let s = stg.clone();
-  let cnn = Connection::open(&s.dbopt).expect("DB Error");
+pub fn upld_idocdefn(s: SettingsTp) {
+  let cnn = Connection::open(&s.dbopt).expect("DB Open Error");
   let mut ui = UpldmitmTp { ..Default::default() };
   let mut ug = UpldsgrpTp { ..Default::default() };
   let mut us = UpldssgmTp { ..Default::default() };

@@ -1,5 +1,5 @@
 //**********************************************************************************
-// settings.rs: Define pgm-level & run-level settings [20170524-BAR8TL]            *
+// settings.rs : Define pgm-level & run-level settings (2017-05-24 bar8tl)
 //**********************************************************************************
 #![allow(non_snake_case)]
 

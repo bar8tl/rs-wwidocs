@@ -1,5 +1,6 @@
 //**********************************************************************************
-// ldtables.rs: Maintain IDoc definition tables into reference DB [20170524-BAR8TL]*
+// ldtables.rs : Maintain IDoc definition tables into reference DB
+// (2017-05-24 bar8tl)
 //**********************************************************************************
 use crate::definitn::upldmitm::ItemsTp;
 use crate::definitn::upldsgrp::KeystTp;
@@ -14,8 +15,8 @@ pub fn clear_items(cnn: &Connection, idocn: String) {
 
 pub fn isrt_items(cnn: &Connection, w: ItemsTp) {
   cnn.execute(
-    "INSERT INTO items VALUES (?1,?2,?3,?4,?5,?6,?7,?8,?9,?10,?11,?12,?13,?14,
-    ?15)", (
+    "INSERT INTO items VALUES (?1,?2,?3,?4,?5,?6,?7,?8,?9,?10,?11,?12,?13,?14,?15)",
+    (
       w.idocn, w.rname, w.dname, w.rclas, w.rtype, w.dtype, w.dtext, w.level,
       w.stats, w.minlp, w.maxlp, w.lngth, w.seqno, w.strps, w.endps,
     )
@@ -30,12 +31,14 @@ pub fn clear_struc(cnn: &Connection, idocn: String, strtp: String) {
 
 pub fn isrt_struc(cnn: &Connection, idocn: String, strtp: String, pnode: KeystTp,
   cnode: KeystTp) {
-  println!("strtp: {}", strtp);
-  let mut pdnam: String = Default::default();
-  let mut cdnam: String = Default::default();
-  if strtp == GRP {
-    println!("dnames |{}|{}|", pnode.dname, cnode.dname);
-    pdnam = format!("{:02}", cnode.dname.parse::<usize>().unwrap());
+  let mut pdnam = String::new();
+  let mut cdnam = String::new();
+  if strtp == GRP.to_uppercase() {
+    let test = pnode.dname.parse::<usize>();
+    match test {
+      Ok(_ok) => pdnam = format!("{:02}", pnode.dname.parse::<usize>().unwrap()),
+      Err(_e) => pdnam = pnode.dname.clone(),
+    }
     cdnam = format!("{:02}", cnode.dname.parse::<usize>().unwrap());
   }
   cnn.execute(

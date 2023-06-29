@@ -1,4 +1,7 @@
-// rdparser: Identify individual tokens in SAP IDoc parser file
+//**********************************************************************************
+// rdparser.rs : Identify individual tokens in SAP IDoc parser file
+// (2017-05-24 bar8tl)
+//**********************************************************************************
 const BEGIN_: &str = "BEGIN_";
 const END_  : &str = "END_";
 

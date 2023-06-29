@@ -1,6 +1,6 @@
 //**********************************************************************************
-// upld_mitmdata.rs: Get IDoc item data (records, groups, segments and fields) and *
-// Create corresponding item records in the database                               *
+// upldmitm.rs : Get IDoc item data (records, groups, segments and fields) and
+// Create corresponding item records in the database (2017-05-24 bar8tl)
 //**********************************************************************************
 use crate::definitn::rdparser::*;
 use crate::definitn::ldtables::*;
@@ -86,7 +86,8 @@ pub fn init_upldmitm(ui: &mut UpldmitmTp) {
   ui.icol = vec![EXTENSION];
   ui.gcol = vec![LEVEL, STATUS, LOOPMIN, LOOPMAX];
   ui.scol = vec![SEGMENTTYPE, QUALIFIED, LEVEL, STATUS, LOOPMIN, LOOPMAX];
-  ui.fcol = vec![NAME, TEXT, TYPE, LENGTH, FIELD_POS, CHARACTER_FIRST, CHARACTER_LAST];
+  ui.fcol = vec![NAME, TEXT, TYPE, LENGTH, FIELD_POS, CHARACTER_FIRST,
+    CHARACTER_LAST];
   ui.l = -1;
 }
 
@@ -94,12 +95,9 @@ pub fn init_upldmitm(ui: &mut UpldmitmTp) {
 pub fn get_mitmdata(sline: &ParslTp, ui: &mut UpldmitmTp) {
   if sline.label.ident == BEGIN {
     ui.l += 1;
-    let reclb: ReclbTp = ReclbTp {
-      ident: sline.label.ident.clone(),
-      recnm: sline.label.recnm.clone(),
-      rectp: sline.label.rectp.clone()
-    };
-    ui.stack.push(ParslTp { label: reclb, value: sline.value.clone() });
+    ui.stack.push(ParslTp { label: ReclbTp { ident: sline.label.ident.clone(),
+      recnm: sline.label.recnm.clone(), rectp: sline.label.rectp.clone() },
+      value: sline.value.clone() });
     if sline.value != "" {
       if sline.label.recnm == IDOC {
         ui.colsi[0] = sline.value.clone();
@@ -119,9 +117,11 @@ pub fn get_mitmdata(sline: &ParslTp, ui: &mut UpldmitmTp) {
     return;
   }
 
-  if sline.label.ident == END { 
+  if sline.label.ident == END {
     ui.l -= 1;
-    if ui.l > -1 {
+    if ui.l < 0 {
+      ui.stack = Default::default();
+    } else {
       ui.stack = ui.stack[..ui.l as usize+1].to_vec();
     }
     return;
@@ -275,6 +275,7 @@ pub fn isrt_mitmdata(cnn: &Connection, ui: &mut UpldmitmTp) {
     w.seqno = lrecd.cols[4].parse::<usize>().unwrap(); // FIELD_POS       0001
     w.strps = lrecd.cols[5].parse::<usize>().unwrap(); // CHARACTER_FIRST 000001
     w.endps = lrecd.cols[6].parse::<usize>().unwrap(); // CHARACTER_LAST  000010
+//    println!("item before {:?}", w);
     isrt_items(cnn, w.clone());
   }
 

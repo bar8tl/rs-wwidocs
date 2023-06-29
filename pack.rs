@@ -1,81 +1,73 @@
 //**********************************************************************************
-// pack.rs: Convert IDoc classic hierarchical format to flat text file format      *
-// [20170524-BAR8TL]                                                               *
+// pack.rs : Convert IDoc classic hierarchical format to flat text file format
+// (2017-05-24 bar8tl)
 //**********************************************************************************
 #![allow(non_snake_case)]
 
+mod build;
+mod dump;
+mod setup;
+
 use crate::settings::SettingsTp;
+use setup::{setup_section, setup_segment};
+use build::{proc_edidc, proc_edidd, proc_edids};
 use rusqlite::Connection;
 use std::fs;
 use std::fs::File;
-use std::io::{BufRead, BufReader, Write};
+use std::io::{BufRead, BufReader};
 use std::path::Path;
 
-const EDIDC  : &str = "EDIDC";
-const EDIDD  : &str = "EDIDD";
-const EDIDS  : &str = "EDIDS";
-const DATA   : &str = "DATA";
-const SEGNUM : &str = "SEGNUM";
-const SEGNAM : &str = "SEGNAM";
-const RVCPRN : &str = "RVCPRN";
-const RCVPRN : &str = "RCVPRN";
-const CREDAT : &str = "CREDAT";
-const CRETIM : &str = "CRETIM";
-const TABNAM : &str = "TABNAM";
-const MANDT  : &str = "MANDT";
-const DOCNUM : &str = "DOCNUM";
-const RCVPFC : &str = "RCVPFC";
-const SERIAL : &str = "SERIAL";
-const PSGNUM : &str = "PSGNUM";
-const HLEVEL : &str = "HLEVEL";
-const IDOCTYP: &str = "IDOCTYP";
-const CIMTYP : &str = "CIMTYP";
+const EDIDC : &str = "EDIDC";
+const EDIDD : &str = "EDIDD";
+const EDIDS : &str = "EDIDS";
+const SEGNUM: &str = "SEGNUM";
+const SEGNAM: &str = "SEGNAM";
 
 #[derive(Debug, Clone, Default)]
-struct HstrucTp {
-  sgnum: String,
-  sgnam: String,
-  sglvl: String
+pub struct HstrucTp {
+  pub sgnum: String,
+  pub sgnam: String,
+  pub sglvl: String
 }
 
 #[derive(Debug, Clone, Default)]
-struct ConvertTp {
-  cntrl: String,
-  clien: String,
-  inpdr: String,
-  outdr: String,
-  rcvpf: String,
-  flide: String,
-  flnam: String,
-  flext: String,
-  idocx: String,
-  idocn: String,
-  idocb: String,
-  sectn: String,
-  secnb: String,
-  sgnum: String,
-  sgnam: String,
-  sgdsc: String,
-  sgnbk: String,
-  sghnb: String,
-  sglvl: String,
-  serie: String,
-  nsegm: usize,
-  dirty: bool,
-  parnt: Vec<HstrucTp>,
-  l    : usize
+pub struct ConvertTp {
+  pub cntrl: String,
+  pub clien: String,
+  pub inpdr: String,
+  pub outdr: String,
+  pub rcvpf: String,
+  pub flide: String,
+  pub flnam: String,
+  pub flext: String,
+  pub idocx: String,
+  pub idocn: String,
+  pub idocb: String,
+  pub sectn: String,
+  pub secnb: String,
+  pub sgnum: String,
+  pub sgnam: String,
+  pub sgdsc: String,
+  pub sgnbk: String,
+  pub sghnb: String,
+  pub sglvl: String,
+  pub serie: String,
+  pub nsegm: usize,
+  pub dirty: bool,
+  pub parnt: Vec<HstrucTp>,
+  pub l    : usize
 }
 
-pub fn conv_idoc2flat(stg: SettingsTp) {
+pub fn conv_idoc2flat(s: SettingsTp) {
   let mut c = ConvertTp { ..Default::default() };
-  let cnn = Connection::open(&stg.dbopt).expect("DB Error");
-  c.cntrl = stg.cntrl.clone();
-  c.clien = stg.clien.clone();
-  c.inpdr = stg.inpdr.clone();
-  c.outdr = stg.outdr.clone();
-  c.rcvpf = stg.rcvpf.clone();
-  c.idocx = stg.objnm.to_uppercase();
-  for entry in fs::read_dir(&stg.inpdr).unwrap() {
+  let cnn = Connection::open(&s.dbopt).expect("DB Error");
+  c.cntrl = s.cntrl.clone();
+  c.clien = s.clien.clone();
+  c.inpdr = s.inpdr.clone();
+  c.outdr = s.outdr.clone();
+  c.rcvpf = s.rcvpf.clone();
+  c.idocx = s.objnm.to_uppercase();
+  for entry in fs::read_dir(&s.inpdr).unwrap() {
     let entry = entry.unwrap().path();
     if entry.is_dir() {
       continue;
@@ -86,9 +78,9 @@ pub fn conv_idoc2flat(stg: SettingsTp) {
     c.flide = filid.to_str().unwrap().to_string();
     c.flnam = filnm.to_str().unwrap().to_string();
     c.flext = extsn.to_str().unwrap().to_string();
-    let inppt = format!("{}{}", &stg.inpdr, c.flide);
-    if stg.ifilt.len() == 0 || (stg.ifilt.len() > 0 &&
-       pass_filter(&stg.ifilt, &c.flnam)) {
+    let inppt = format!("{}{}", &s.inpdr, c.flide);
+    if s.ifilt.len() == 0 || (s.ifilt.len() > 0 &&
+       pass_filter(&s.ifilt, &c.flnam)) {
       proc_file(&cnn, &mut c, inppt);
     }
   }
@@ -114,8 +106,8 @@ fn proc_file(cnn: &Connection, c: &mut ConvertTp, inppt: String) {
       continue;
     }
     // Gets IDoc number
-    if c.idocn.len() == 0 && tokn.len() == 1 && line[0..11] == "IDoc Number".
-       to_string() {
+    if c.idocn.len() == 0 && tokn.len() == 1 &&
+       line[0..11] == "IDoc Number".to_string() {
       let idtkn: Vec<&str> = line.split(" : ").collect();
       c.idocn = idtkn[1].trim().to_string();
       continue;
@@ -160,192 +152,10 @@ fn proc_file(cnn: &Connection, c: &mut ConvertTp, inppt: String) {
   ren_file("out", &c.outdr, &c.flnam, &c.flext);
 }
 
-// Function to setup measures to take for each data section. Each new section
-// causes dumping data from previous one
-fn setup_section(cnn: &Connection, c: &mut ConvertTp, lctrl: &mut [char;  524],
-   lsegm: &mut [char; 1063], lstat: &mut [char;  562], tokn: Vec<&str>,
-   OF: &mut File) {
-  c.sectn = tokn[0].to_string();
-  if c.sectn == EDIDC {
-    *lctrl = [' '; 524];
-  }
-  if c.sectn == EDIDD {
-    dump_controlline(cnn, c, lctrl, OF);
-  }
-  if c.sectn == EDIDS {
-    c.sgnbk = c.sgnum.clone();
-    dump_segmentline(cnn, c, lsegm, OF);
-    *lstat = [' '; 562];
-    if tokn.len() == 3 {
-      c.secnb = tokn[2].to_string();
-    }
-  }
-}
-
-// Function to setup measures to take for each data segment in Data Idoc being
-// converted
-fn setup_segment(cnn: &Connection, c: &mut ConvertTp, lsegm: &mut [char; 1063],
-   tokn: Vec<&str>, OF: &mut File) {
-  c.nsegm += 1;
-  if c.nsegm > 1 {
-    dump_segmentline(cnn, c, lsegm, OF);
-  }
-  c.sgnam = tokn[2].to_string();
-  *lsegm = [' '; 1063];
-  let mut level: usize = 0;
-  cnn.query_row("SELECT dname, level FROM items WHERE idocn=?1 and rname=\"SEGMENT\"
-    and dtype=?2;", [c.idocx.clone(), c.sgnam.clone()], |row| {
-      Ok({
-        c.sgdsc = row.get(0).unwrap();
-        level   = row.get(1).unwrap();}
-      )
-    }).expect("Error: Idoc type not found in definition DB"
-  );
-  c.sglvl = format!("{:02}", level);
-
-  if c.nsegm == 1 {
-    c.parnt.push(HstrucTp{ sgnum: c.sgnum.clone(), sgnam: c.sgnam.clone(),
-      sglvl: c.sglvl.clone() });
-    c.l += 1;
-    c.sghnb = "000000".to_string();
-  } else {
-    if c.sglvl > c.parnt[c.l].sglvl {
-      c.parnt.push(HstrucTp{ sgnum: c.sgnum.clone(), sgnam: c.sgnam.clone(),
-       sglvl: c.sglvl.clone() });
-      c.l += 1;
-      c.sghnb = c.parnt[c.l-1].sgnum.clone();
-    } else if c.sglvl == c.parnt[c.l].sglvl {
-      c.parnt[c.l].sgnum = c.sgnum.clone();
-      c.parnt[c.l].sgnam = c.sgnam.clone();
-      c.parnt[c.l].sglvl = c.sglvl.clone();
-      c.sghnb = c.parnt[c.l-1].sgnum.clone();
-    } else {
-      let prvlv = c.parnt[c.l].sglvl.parse::<usize>().unwrap();
-      let curlv = c.sglvl.           parse::<usize>().unwrap();
-      let nstep = prvlv - curlv;
-      for i in 1..nstep {
-        c.l -= 1;
-        c.parnt = c.parnt[..c.l+1].to_vec();
-      }
-      c.parnt[c.l].sgnum = c.sgnum.clone();
-      c.parnt[c.l].sgnam = c.sgnam.clone();
-      c.parnt[c.l].sglvl = c.sglvl.clone();
-      c.sghnb = c.parnt[c.l-1].sgnum.clone();
-    }
-  }
-}
-
-// Functions to process format conversion to fields in control record
-fn proc_edidc(cnn: &Connection, c: &mut ConvertTp, lctrl: &mut [char; 524],
-   tokn: Vec<&str>) {
-  let mut flkey = tokn[0].clone();
-  if flkey == RVCPRN {
-    flkey = RCVPRN;
-  }
-  let mut flval: String = Default::default();
-  if tokn.len() == 3 {
-    let flds: Vec<&str> = tokn[2].split(" :").collect();
-    flval = flds[0].to_string();
-  }
-  if flkey == CREDAT {
-    c.serie = flval.clone();
-  }
-  if flkey == CRETIM {
-    c.serie = format!("{}{}", c.serie, flval);
-  }
-  if flval.len() > 0 {
-    c.dirty = true;
-    set_controlfield(cnn, c, lctrl, flkey, flval);
-  }
-}
-
-// Functions to process format conversion to fields in data records
-fn proc_edidd(cnn: &Connection, c: &mut ConvertTp, lsegm: &mut [char; 1063],
-   tokn: Vec<&str>) {
-  let flkey = tokn[0].clone();
-  let mut flval = Default::default();
-  if tokn.len() == 3 {
-    let flds: Vec<&str> = tokn[2].split(" :").collect();
-    flval = flds[0].to_string();
-  }
-  if flval.len() > 0 {
-    c.dirty = true;
-    let sgdsc = c.sgdsc.clone();
-    set_segmentfield(cnn, c, lsegm, sgdsc.as_str(), flkey, flval);
-  }
-}
-
-fn proc_edids() {}
-
-fn dump_controlline(cnn: &Connection, c: &mut ConvertTp, lctrl: &mut [char; 524],
-   OF: &mut File) {
-  if c.dirty {
-    set_controlfield(cnn, c, lctrl, TABNAM, c.cntrl.clone());
-    set_controlfield(cnn, c, lctrl, MANDT , c.clien.clone());
-    set_controlfield(cnn, c, lctrl, DOCNUM, c.idocn.clone());
-    set_controlfield(cnn, c, lctrl, RCVPFC, c.rcvpf.clone());
-    set_controlfield(cnn, c, lctrl, SERIAL, c.serie.clone());
-    let oline: String = lctrl.iter().collect();
-    OF.write_all(format!("{}\r\n", oline).as_bytes()).expect("write failed");
-    c.dirty = false;
-  }
-}
-
-fn dump_segmentline(cnn: &Connection, c: &mut ConvertTp, lsegm: &mut [char; 1063],
-   OF: &mut File) {
-  if c.dirty {
-    set_segmentfield(cnn, c, lsegm, DATA, SEGNAM, c.sgdsc.clone());
-    set_segmentfield(cnn, c, lsegm, DATA, MANDT , c.clien.clone());
-    set_segmentfield(cnn, c, lsegm, DATA, DOCNUM, c.idocn.clone());
-    set_segmentfield(cnn, c, lsegm, DATA, SEGNUM, c.sgnbk.clone());
-    set_segmentfield(cnn, c, lsegm, DATA, PSGNUM, c.sghnb.clone());
-    set_segmentfield(cnn, c, lsegm, DATA, HLEVEL, c.sglvl.clone());
-    let oline: String = lsegm.iter().collect();
-    OF.write_all(format!("{}\r\n", oline).as_bytes()).expect("write failed");
-    c.dirty = false;
-  }
-}
-
-fn set_controlfield(cnn: &Connection, c: &mut ConvertTp, lctrl: &mut [char; 524],
-   flkey: &str, mut flval: String) {
-  let mut strps: usize = 0;
-  cnn.query_row("SELECT strps FROM items WHERE idocn=?1 and rname=\"CONTROL\"
-    and dname=?2;", [c.idocx.to_string(), flkey.to_string()], |row| {
-      Ok(strps = row.get(0).unwrap()) })
-    .expect("Error: Idoc type not found in definition DB");
-  if flkey == IDOCTYP && flval == "14" {
-    flval = c.idocb.to_string();
-  }
-  if flkey == CIMTYP  && flval == "14" {
-    flval = c.idocx.to_string();
-  }
-  let mut k: usize = strps - 1;
-  let temp: Vec<char> = flval.chars().collect();
-  for i in 0..temp.len() {
-    lctrl[k] = temp[i];
-    k += 1;
-  }
-}
-
-fn set_segmentfield(cnn: &Connection, c: &mut ConvertTp, lsegm: &mut [char; 1063],
-   sgdsc: &str, flkey: &str, flval: String) {
-  let mut strps: usize = 0;
-  cnn.query_row("SELECT strps FROM items WHERE idocn=?1 and rname=?2 and dname=?3;",
-    [c.idocx.clone(), sgdsc.to_string(), flkey.to_string()], |row| {
-      Ok(strps = row.get(0).unwrap()) })
-    .expect("Error: Segment type not found in definition DB");
-  let mut k: usize = strps - 1;
-  let temp: Vec<char> = flval.chars().collect();
-  for i in 0..temp.len() {
-    lsegm[k] = temp[i];
-    k += 1;
-  }
-}
-
 fn determ_idocprops(cnn: &Connection, idocx: String) -> String {
   let mut idocb: String = Default::default();
   cnn.query_row("SELECT dname FROM items WHERE idocn=?1 and rname=\"IDOC\";",
-    [idocx], |row| { Ok(idocb = row.get(0).unwrap()) })
+    [idocx.to_uppercase()], |row| { Ok(idocb = row.get(0).unwrap()) })
     .expect("Error: Idoc type not found in definition DB");
   return idocb;
 }

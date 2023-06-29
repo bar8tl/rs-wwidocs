@@ -1,6 +1,6 @@
 //**********************************************************************************
-// upldsgrp.rs: Get IDoc groups structure data and to create corresponding         *
-// structure records in the database                                               *
+// upldsgrp.rs : Get IDoc groups structure data and to create corresponding
+// structure records in the definition database (2017-05-24 bar8tl)
 //**********************************************************************************
 use crate::definitn::ldtables::*;
 use crate::definitn::rdparser::*;
@@ -30,7 +30,7 @@ pub struct UpldsgrpTp {
 }
 
 pub fn init_upldsgrp(ug: &mut UpldsgrpTp, strtp: &str) {
-  ug.strtp = strtp.to_lowercase();
+  ug.strtp = strtp.to_uppercase();
   ug.l = -1;
 }
 
@@ -65,7 +65,7 @@ pub fn get_sgrpdata(cnn: &Connection, sline: &ParslTp, ug: &mut UpldsgrpTp) {
     } else if sline.label.recnm == GROUP {
       ug.gseqn += 1;
       ug.stack[ug.l as usize-1].pseqn = ug.gseqn;
-      isrt_struc(cnn, ug.idocn.clone(), ug.strtp.clone(), 
+      isrt_struc(cnn, ug.idocn.clone(), ug.strtp.clone(),
         ug.stack[ug.l as usize-1].clone(), ug.stack[ug.l as usize].clone());
       ug.stack = ug.stack[..ug.l as usize].to_vec();
       ug.l -= 1;

@@ -1,5 +1,5 @@
 //**********************************************************************************
-// params.rs: Gets a list of command-line parameters                               *
+// params.rs : Gets a list of command-line parameters (2017-05-24 bar8tl)
 //**********************************************************************************
 use std::env;
 
