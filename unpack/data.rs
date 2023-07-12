@@ -84,7 +84,7 @@ pub struct DidocTp {
   pub idocn: String,
   pub qutdr: String,
   pub recnf: usize,
-  pub setno: usize,
+  pub setno: i32,
   pub recno: usize,
   pub lctrl: LctrlTp, // Control list
   pub sdata: SdataTp, // Dataset
@@ -94,15 +94,15 @@ pub struct DidocTp {
   pub lsegm: LsegmTp, // Segmentset list
   pub sfild: SfildTp,
   pub count: [Vec<CountTp>; 9],
-  pub l    : usize,
-  pub c1   : usize,
-  pub c2   : usize,
-  pub c3   : usize,
-  pub c4   : usize,
-  pub c5   : usize,
-  pub c6   : usize,
-  pub c7   : usize,
-  pub c8   : usize
+  pub l    : i32,
+  pub c1   : i32,
+  pub c2   : i32,
+  pub c3   : i32,
+  pub c4   : i32,
+  pub c5   : i32,
+  pub c6   : i32,
+  pub c7   : i32,
+  pub c8   : i32
 }
 
 pub fn read_data(cnn: &Connection, d: &mut DidocTp, iline: &str, idocn: &String,
@@ -113,6 +113,7 @@ pub fn read_data(cnn: &Connection, d: &mut DidocTp, iline: &str, idocn: &String,
   let mut cdval: String  = Default::default();
   d.recnf += 1;
   d.recno += 1;
+  println!("sel1: |{}|{}|", idocn, rname);
   let mut stmt = cnn.prepare("SELECT dname, strps, endps FROM items WHERE idocn=?1
     AND rname=?2 order by seqno;")?;
   let mut rows = stmt.query([idocn, &rname.to_string(),])?;
@@ -120,14 +121,19 @@ pub fn read_data(cnn: &Connection, d: &mut DidocTp, iline: &str, idocn: &String,
     f.dname = row.get(0)?;
     f.strps = row.get(1)?;
     f.endps = row.get(2)?;
+    if f.endps >= iline.len() {
+      f.endps = iline.len();
+    }
     cdval = iline[f.strps-1..f.endps].trim().to_string();
     if cdval.len() == 0 || cdval == "" {
       continue
     }
     if f.dname == "SEGNAM" {
       let mut dname: String = String::new();
+      println!("sel2: |{}|{}|", idocn, cdval);
       cnn.query_row("SELECT segtp FROM segma WHERE idocn=?1 AND segdf=?2;",
         [idocn, &cdval,], |row| { Ok({ dname = row.get(0).unwrap(); })})?;
+      println!("sel3: |{}|{}|", idocn, dname);
       cnn.query_row("SELECT dname, dtype, dtext, level FROM items WHERE idocn=?1
         AND dname=?2 AND rname=\"SEGMENT\";", [idocn, &dname,], |row| {
         Ok({
@@ -155,34 +161,34 @@ pub fn read_data(cnn: &Connection, d: &mut DidocTp, iline: &str, idocn: &String,
 // Process Segment Data - Determines segment Qualifier and Instance Number
 fn proc_segment(cnn: &Connection, d: &mut DidocTp, iline: &str, idocn: &String,
    _strtp: &str, cdnam: &String, level: usize) {
-  let mut instn: usize = 0;
+  let mut instn: i32    = -1;
   let mut ident: String = String::new();
-  if level == d.l {
-    instn = updt_counter(d, cdnam.to_string(), d.l);
+  if level == d.l as usize {
+    instn = updt_counter(d, cdnam.to_string(), d.l as usize);
     ident = "SAME".to_string();
-  } else if level > d.l {
-    d.l = level;
-    d.count[d.l].push(CountTp { segmn: cdnam.to_string(), instn: 1 } );
-    instn = rtrv_counter(d, cdnam.to_string(), d.l);
+  } else if level > d.l as usize {
+    d.l = level as i32;
+    d.count[d.l as usize].push(CountTp { segmn: cdnam.to_string(), instn: 1 });
+    instn = rtrv_counter(d, cdnam.to_string(), d.l as usize);
     ident = "LOWER".to_string();
-  } else if level < d.l {
-    let goupl: usize = d.l - level;
+  } else if level < d.l as usize {
+    let goupl: usize = d.l as usize - level;
     for _ in 0..goupl {
-      d.count[d.l] = Default::default();
+      d.count[d.l as usize] = Default::default();
       d.l -= 1;
     }
-    instn = updt_counter(d, cdnam.to_string(), d.l);
+    instn = updt_counter(d, cdnam.to_string(), d.l as usize);
     ident = "UPPER".to_string();
   }
-  add_tostruct(cnn, d, iline, idocn, ident, cdnam.to_string(), d.l, instn);
+  add_tostruct(cnn, d, iline, idocn, ident, cdnam.to_string(), d.l, instn as usize);
 }
 
 // Update counter of segment with equal segment ID in the current struct level
-fn updt_counter(d: &mut DidocTp, segmn: String, l: usize) -> usize {
+fn updt_counter(d: &mut DidocTp, segmn: String, l: usize) -> i32 {
   for j in 0..d.count[l].len() {
     if d.count[l][j].segmn == segmn {
       d.count[l][j].instn += 1;
-      return d.count[l][j].instn;
+      return d.count[l][j].instn as i32;
     }
   }
   d.count[l].push(CountTp{ segmn: segmn, instn: 1 });
@@ -190,10 +196,10 @@ fn updt_counter(d: &mut DidocTp, segmn: String, l: usize) -> usize {
 }
 
 // Retrieve last counter of segment with equal segm ID in the current struct lvl
-fn rtrv_counter(d: &mut DidocTp, segmn: String, l: usize) -> usize {
+fn rtrv_counter(d: &mut DidocTp, segmn: String, l: usize) -> i32 {
   for j in 0..d.count[l].len() {
     if d.count[l][j].segmn == segmn {
-      return d.count[l][j].instn
+      return d.count[l][j].instn as i32;
     }
   }
   return 0;
@@ -201,7 +207,7 @@ fn rtrv_counter(d: &mut DidocTp, segmn: String, l: usize) -> usize {
 
 // Build segment structure into an non-linked segment node
 fn add_tostruct(cnn: &Connection, d: &mut DidocTp, iline: &str, idocn: &String,
-   _ident: String, segmn: String, l: usize, instn: usize) {
+   _ident: String, segmn: String, l: i32, instn: usize) {
   if d.recno <= 9999 {
     d.sfild.qlkey = "".to_string();
     d.sfild.qlval = "".to_string();
@@ -209,75 +215,80 @@ fn add_tostruct(cnn: &Connection, d: &mut DidocTp, iline: &str, idocn: &String,
     get_segmdata(cnn, d, iline, idocn, "SGM".to_string(), &segmn, l).expect("err");
     if l == 1 {
       d.rsegm.child.push(RsegmTp {
-        segmn: segmn, recno: d.recno, level: l, qlkey: d.sfild.qlkey.clone(),
-        qlval: d.sfild.qlval.clone(), instn: instn, field: d.sfild.field.clone(),
-        child: Default::default() });
-      (d.c2, d.c3, d.c4, d.c5, d.c6, d.c7, d.c8) = (0, 0, 0, 0, 0, 0, 0);
+        segmn: segmn, recno: d.recno, level: l as usize,
+        qlkey: d.sfild.qlkey.clone(), qlval: d.sfild.qlval.clone(), instn: instn,
+        field: d.sfild.field.clone(), child: Default::default() });
+      (d.c2, d.c3, d.c4, d.c5, d.c6, d.c7, d.c8) = (-1, -1, -1, -1, -1, -1, -1);
       d.c1 += 1;
     } else if l == 2 {
-      d.rsegm.child[d.c1].child.push(RsegmTp {
-        segmn: segmn, recno: d.recno, level: l, qlkey: d.sfild.qlkey.clone(),
-        qlval: d.sfild.qlval.clone(), instn: instn, field: d.sfild.field.clone(),
-        child: Default::default() });
-      (d.c3, d.c4, d.c5, d.c6, d.c7, d.c8) = (0, 0, 0, 0, 0, 0);
+      d.rsegm.child[d.c1 as usize].child.push(RsegmTp {
+        segmn: segmn, recno: d.recno, level: l as usize,
+        qlkey: d.sfild.qlkey.clone(), qlval: d.sfild.qlval.clone(), instn: instn,
+        field: d.sfild.field.clone(), child: Default::default() });
+      (d.c3, d.c4, d.c5, d.c6, d.c7, d.c8) = (-1, -1, -1, -1, -1, -1);
       d.c2 += 1;
     } else if l == 3 {
-      d.rsegm.child[d.c1].child[d.c2].child.push(RsegmTp {
-        segmn: segmn, recno: d.recno, level: l, qlkey: d.sfild.qlkey.clone(),
-        qlval: d.sfild.qlval.clone(), instn: instn, field: d.sfild.field.clone(),
-        child: Default::default() });
-      (d.c4, d.c5, d.c6, d.c7, d.c8) = (0, 0, 0, 0, 0);
+      d.rsegm.child[d.c1 as usize].child[d.c2 as usize].child.push(RsegmTp {
+        segmn: segmn, recno: d.recno, level: l as usize,
+        qlkey: d.sfild.qlkey.clone(), qlval: d.sfild.qlval.clone(), instn: instn,
+        field: d.sfild.field.clone(), child: Default::default() });
+      (d.c4, d.c5, d.c6, d.c7, d.c8) = (-1, -1, -1, -1, -1);
       d.c3 += 1;
     } else if l == 4 {
-      d.rsegm.child[d.c1].child[d.c2].child[d.c3].child.push(RsegmTp {
-        segmn: segmn, recno: d.recno, level: l, qlkey: d.sfild.qlkey.clone(),
-        qlval: d.sfild.qlval.clone(), instn: instn, field: d.sfild.field.clone(),
-        child: Default::default() });
-      (d.c5, d.c6, d.c7, d.c8) = (0, 0, 0, 0);
+      d.rsegm.child[d.c1 as usize].child[d.c2 as usize].child[d.c3 as usize].
+        child.push(RsegmTp {
+        segmn: segmn, recno: d.recno, level: l as usize,
+        qlkey: d.sfild.qlkey.clone(), qlval: d.sfild.qlval.clone(), instn: instn,
+        field: d.sfild.field.clone(), child: Default::default() });
+      (d.c5, d.c6, d.c7, d.c8) = (-1, -1, -1, -1);
       d.c4 += 1;
     } else if l == 5 {
-      d.rsegm.child[d.c1].child[d.c2].child[d.c3].child[d.c4].child.push(RsegmTp {
-        segmn: segmn, recno: d.recno, level: l, qlkey: d.sfild.qlkey.clone(),
-        qlval: d.sfild.qlval.clone(), instn: instn, field: d.sfild.field.clone(),
-        child: Default::default() });
-      (d.c6, d.c7, d.c8) = (0, 0, 0);
+      d.rsegm.child[d.c1 as usize].child[d.c2 as usize].child[d.c3 as usize].
+        child[d.c4 as usize].child.push(RsegmTp {
+        segmn: segmn, recno: d.recno, level: l as usize,
+        qlkey: d.sfild.qlkey.clone(), qlval: d.sfild.qlval.clone(), instn: instn,
+        field: d.sfild.field.clone(), child: Default::default() });
+      (d.c6, d.c7, d.c8) = (-1, -1, -1);
       d.c5 += 1;
     } else if l == 6 {
-      d.rsegm.child[d.c1].child[d.c2].child[d.c3].child[d.c4].child[d.c5].
-        child.push(RsegmTp {
-        segmn: segmn, recno: d.recno, level: l, qlkey: d.sfild.qlkey.clone(),
-        qlval: d.sfild.qlval.clone(), instn: instn, field: d.sfild.field.clone(),
-        child: Default::default() });
-      (d.c7, d.c8) = (0, 0);
+      d.rsegm.child[d.c1 as usize].child[d.c2 as usize].child[d.c3 as usize].
+        child[d.c4 as usize].child[d.c5 as usize].child.push(RsegmTp {
+        segmn: segmn, recno: d.recno, level: l as usize,
+        qlkey: d.sfild.qlkey.clone(), qlval: d.sfild.qlval.clone(), instn: instn,
+        field: d.sfild.field.clone(), child: Default::default() });
+      (d.c7, d.c8) = (-1, -1);
       d.c6 += 1;
     } else if l == 7 {
-      d.rsegm.child[d.c1].child[d.c2].child[d.c3].child[d.c4].child[d.c5].
-        child[d.c6].child.push(RsegmTp {
-        segmn: segmn, recno: d.recno, level: l, qlkey: d.sfild.qlkey.clone(),
-        qlval: d.sfild.qlval.clone(), instn: instn, field: d.sfild.field.clone(),
-        child: Default::default() });
-      (d.c8) = 0;
+      d.rsegm.child[d.c1 as usize].child[d.c2 as usize].child[d.c3 as usize].
+        child[d.c4 as usize].child[d.c5 as usize].child[d.c6 as usize].
+        child.push(RsegmTp {
+        segmn: segmn, recno: d.recno, level: l as usize,
+        qlkey: d.sfild.qlkey.clone(), qlval: d.sfild.qlval.clone(), instn: instn,
+        field: d.sfild.field.clone(), child: Default::default() });
+      (d.c8) = -1;
       d.c7 += 1;
     } else if l == 8 {
-      d.rsegm.child[d.c1].child[d.c2].child[d.c3].child[d.c4].child[d.c5].
-        child[d.c6].child[d.c7].child.push(RsegmTp {
-        segmn: segmn, recno: d.recno, level: l, qlkey: d.sfild.qlkey.clone(),
-        qlval: d.sfild.qlval.clone(), instn: instn, field: d.sfild.field.clone(),
-        child: Default::default() });
+      d.rsegm.child[d.c1 as usize].child[d.c2 as usize].child[d.c3 as usize].
+        child[d.c4 as usize].child[d.c5 as usize].child[d.c6 as usize].
+        child[d.c7 as usize].child.push(RsegmTp {
+        segmn: segmn, recno: d.recno, level: l as usize,
+        qlkey: d.sfild.qlkey.clone(), qlval: d.sfild.qlval.clone(), instn: instn,
+        field: d.sfild.field.clone(), child: Default::default() });
       d.c8 += 1;
     } else if l == 9 {
-      d.rsegm.child[d.c1].child[d.c2].child[d.c3].child[d.c4].child[d.c5].
-        child[d.c6].child[d.c7].child[d.c8].child.push(RsegmTp {
-        segmn: segmn, recno: d.recno, level: l, qlkey: d.sfild.qlkey.clone(),
-        qlval: d.sfild.qlval.clone(), instn: instn, field: d.sfild.field.clone(),
-        child: Default::default() });
+      d.rsegm.child[d.c1 as usize].child[d.c2 as usize].child[d.c3 as usize].
+        child[d.c4 as usize].child[d.c5 as usize].child[d.c6 as usize].
+        child[d.c7 as usize].child[d.c8 as usize].child.push(RsegmTp {
+        segmn: segmn, recno: d.recno, level: l as usize,
+        qlkey: d.sfild.qlkey.clone(), qlval: d.sfild.qlval.clone(), instn: instn,
+        field: d.sfild.field.clone(), child: Default::default() });
     }
   }
 }
 
 //Get field values of a segment into the IDOC structure
 fn get_segmdata(cnn: &Connection, d: &mut DidocTp, iline: &str, idocn: &String,
-   strtp: String, cdnam: &String, _level: usize) -> Result<()> {
+   strtp: String, cdnam: &String, _level: i32) -> Result<()> {
   let mut f    : ItemsTp = Default::default();
   let mut e    : StrucTp = Default::default();
   let mut cdval: String  = String::new();

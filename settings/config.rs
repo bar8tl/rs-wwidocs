@@ -2,7 +2,7 @@
 // config.rs : Reads config file and gets run parameters (2017-05-24 bar8tl)
 //**********************************************************************************
 use serde::Deserialize;
-use serde_json;
+use serde_json::from_reader;
 use std::fs::File;
 
 #[derive(Debug, Clone, Default, Deserialize)]
@@ -85,8 +85,7 @@ impl ConfigTp {
 
   pub fn get_config(&mut self, fname: &str) {
     let f = File::open(fname).unwrap();
-    let cfg: ConfigTp = serde_json::from_reader(f)
-      .expect("JSON not well-formed");
+    let cfg: ConfigTp = from_reader(f).expect("JSON not well-formed");
     self.konst = cfg.konst;
     self.progm = cfg.progm;
     self.run   = cfg.run;

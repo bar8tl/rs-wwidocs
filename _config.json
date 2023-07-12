@@ -13,12 +13,30 @@
     "outnm": "rundt+'_'+idocn+docno+docdt+'_out'"
   },
   "run": [
-    {
-      "optn" : "def", "objnm": "_-rb04_-yc1_pexr2002.txt"
-    },
-    {
-      "optn" : "def", "objnm": "_-rb04_-yp3_invoic02_xml.txt"
-    },
+    {"optn" : "def", "objnm": "delfor02.txt"                    },
+    {"optn" : "def", "objnm": "delvry03.txt"                    },
+    {"optn" : "def", "objnm": "delvry05.txt"                    },
+    {"optn" : "def", "objnm": "delvry07.txt"                    },
+    {"optn" : "def", "objnm": "invoic01.txt"                    },
+    {"optn" : "def", "objnm": "invoic02.txt"                    },
+    {"optn" : "def", "objnm": "orders01.txt"                    },
+    {"optn" : "def", "objnm": "orders05.txt"                    },
+    {"optn" : "def", "objnm": "seqjit03.txt"                    },
+    {"optn" : "def", "objnm": "systat01.txt"                    },
+    {"optn" : "def", "objnm": "y04c_shp_s09_asn.txt"            },
+    {"optn" : "def", "objnm": "y04vdelvry03.txt"                },
+    {"optn" : "def", "objnm": "y04vorders05.txt"                },
+    {"optn" : "def", "objnm": "y04vseqjit03.txt"                },
+    {"optn" : "def", "objnm": "z48v_invoic02_ex.txt"            },
+    {"optn" : "def", "objnm": "_-rb04_-yc1_pexr2002.txt"        },
+    {"optn" : "def", "objnm": "_-rb04_-yp3_delvry05_824.txt"    },
+    {"optn" : "def", "objnm": "_-rb04_-yp3_delvry_rbna.txt"     },
+    {"optn" : "def", "objnm": "_-rb04_-yp3_delvry_rbna_vw.txt"  },
+    {"optn" : "def", "objnm": "_-rb04_-yp3_invoic02.txt"        },
+    {"optn" : "def", "objnm": "_-rb04_-yp3_invoic02_cu.txt"     },
+    {"optn" : "def", "objnm": "_-rb04_-yp3_invoic02_intrace.txt"},
+    {"optn" : "def", "objnm": "_-rb04_-yp3_invoic02_it.txt"     },
+    {"optn" : "def", "objnm": "_-rb04_-yp3_invoic02_xml.txt"    },
     {
       "optn" : "upk", "objnm": "/rb04/yp3_invoic02_xml",
       "inpdr": ".\\fidoc_invxml\\input\\",

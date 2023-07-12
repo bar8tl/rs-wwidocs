@@ -2,7 +2,7 @@
 // createdb.rs : IDOC definition DB tables creation (2017-05-24 bar8tl)
 //**********************************************************************************
 use crate::settings::SettingsTp;
-use rusqlite::{Connection, Result};
+use rusqlite::Connection;
 use serde::Deserialize;
 use serde_json;
 
@@ -28,36 +28,19 @@ struct ItablesTp {
   sqlst: Vec<SqlstTp>
 }
 
-#[derive(Debug, Clone, Default)]
-struct TlistTp {
-  table: String,
-  sqlst: String
-}
-
 pub fn crt_tables(s: SettingsTp) {
   let it: ItablesTp = serde_json::from_str(ITABLES).unwrap();
-  let mut tlist: Vec<TlistTp> = Vec::with_capacity(5);
-  let cnn = Connection::open(&s.dbopt).expect("Open DB connection error");
+  let cnn = Connection::open(&s.dbopt).expect("Error opening DB");
   for cdb in &s.cfd.cdb {
     for sql in &it.sqlst {
       if cdb.table == sql.table && cdb.cr && sql.activ {
-        tlist.push(TlistTp {
-          table: sql.table.clone(),
-          sqlst: sql.sqlst.clone()
-        });
+        cnn.execute(format!("DROP TABLE IF EXISTS {}", sql.table).as_str(), [])
+          .expect("Error deleting a table");
+        cnn.execute(sql.sqlst.as_str(), []).expect("Error creating a table");
+        println!("Table {} created...", sql.table);
         break;
       }
     }
   }
-  crt_table(&cnn, &s.dbopt, &tlist).expect("Table creation error");
-}
-
-fn crt_table(cnn: &Connection, dbopt: &String, tlist: &Vec<TlistTp>) -> Result<()> {
-  for tabl in tlist {
-    cnn.execute(format!("DROP TABLE IF EXISTS {}", tabl.table).as_str(), [])?;
-    cnn.execute(tabl.sqlst.as_str(), [])?;
-    println!("Table {} created...", tabl.table);
-  }
-  println!("Creation of dabatase {} completed.", dbopt);
-  Ok(())
+  println!("Creation of dabatase {} completed.", s.dbopt);
 }

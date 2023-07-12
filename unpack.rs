@@ -44,28 +44,30 @@ pub fn conv_flat2json(s: SettingsTp) {
 // Process individual Input IDOC File
 fn proc_file(cnn: &Connection, d: &mut DidocTp, inppt: &String, idocn: &String) {
   println!("proc_file {}", inppt);
-  d.setno = Default::default(); // Initialize Instance of data sets in the file
-  d.recnf = Default::default(); // Initialize Number of data records in the file
+  d.setno = -1; // Initialize Instance of data sets in the file
+  d.recnf =  0; // Initialize Number of data records in the file
   let mut cnt: usize = 0;
+  let mut first: bool = true;
   let ifile = File::open(inppt).unwrap();
   let rdr = BufReader::new(ifile);
   for wline in rdr.lines() {
-    let wline = wline.unwrap();
-    let iline = wline.trim();
+    let iline = wline.unwrap();
+    println!("{}|{}", iline, iline.len());
     cnt += 1;
     if cnt == 1usize {
       if &iline[0..8] == "EDI_DC40" {
-        read_control(cnn, d, iline, idocn, "CONTROL", false).expect("DB Error");
+        read_control(cnn, d, &iline, idocn, "CONTROL", &mut first).expect("DB Error");
       } else {
         println!("IDOC File {} should start with Control Record", d.flide);
       }
     } else {
-      read_data(cnn, d, iline, idocn, "DATA").expect("DB Error");
+      read_data(cnn, d, &iline, idocn, "DATA").expect("DB Error");
     }
   }
   if cnt == 0usize {
     println!("Input IDOC file %s is empty: {}", d.flide);
   }
+  println!("{:?}", d);
   write_outputs(d);
 }
 

@@ -11,16 +11,17 @@ const OUTDATA: bool = false;
 const OUTSEGM: bool = true;
 
 pub fn write_outputs(d: &mut DidocTp) {
+  println!("write {:?}", d);
   d.ldata.sdata.push(SdataTp {
-    instn: d.setno,
+    instn: d.setno as usize,
     rdata: d.sdata.rdata.clone()
   });
   d.ssegm.rsegm.push(
     d.rsegm.clone()
   );
   d.lsegm.ssegm.push(SsegmTp {
-    instn: d.setno,
-    cntrl: d.lctrl.rctrl[d.setno].field.clone(),
+    instn: d.setno as usize,
+    cntrl: d.lctrl.rctrl[d.setno as usize].field.clone(),
     rsegm: d.ssegm.rsegm.clone()
   });
   let ofnam = format!("{}{}-{}", d.outdr, d.flnam, format!("{}", d.setno));

@@ -249,7 +249,7 @@ pub struct StrucTp { // IDoc-Structure Descr (*=key field in DB record)
   pub cseqn: usize,  //* p.seqno=Group-Seq       p.seqno*=Seqno
   pub cdnam: String, //* c.dname=Group#          c.dname*=Segm/Field-Name
   pub cdtyp: String, //  ''                      c.dtype =Segm/Field-Type
-  pub cdqlf: String //  ''                      'QUAL'
+  pub cdqlf: String  //  ''                      'QUAL'
 }
 
 pub fn isrt_mitmdata(cnn: &Connection, ui: &mut UpldmitmTp) {
@@ -275,7 +275,6 @@ pub fn isrt_mitmdata(cnn: &Connection, ui: &mut UpldmitmTp) {
     w.seqno = lrecd.cols[4].parse::<usize>().unwrap(); // FIELD_POS       0001
     w.strps = lrecd.cols[5].parse::<usize>().unwrap(); // CHARACTER_FIRST 000001
     w.endps = lrecd.cols[6].parse::<usize>().unwrap(); // CHARACTER_LAST  000010
-//    println!("item before {:?}", w);
     isrt_items(cnn, w.clone());
   }
 

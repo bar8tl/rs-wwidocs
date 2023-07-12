@@ -28,7 +28,7 @@ struct SgmaliasTp {
 pub fn upld_segmalias(s: SettingsTp) {
   let f = File::open(format!("{}{}", s.inpdr, s.objnm)).unwrap();
   let ua: SgmaliasTp = from_reader(f).unwrap();
-  let cnn = Connection::open(&s.dbopt).expect("DB Open Error.");
+  let cnn = Connection::open(&s.dbopt).expect("Error opening DB");
   cnn.execute("DELETE FROM segma;", []).expect("Error clearing SEGMA table");
   for sa in &ua.sgmal {
     for ss in &sa.segm {
