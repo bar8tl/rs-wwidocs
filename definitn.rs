@@ -24,15 +24,9 @@ pub fn upld_idocdefn(s: SettingsTp) {
   let mut ui = UpldmitmTp { ..Default::default() };
   let mut ug = UpldsgrpTp { ..Default::default() };
   let mut us = UpldssgmTp { ..Default::default() };
-  if s.mitm {
-    init_upldmitm(&mut ui);
-  }
-  if s.sgrp {
-    init_upldsgrp(&mut ug, GRP);
-  }
-  if s.ssgm {
-    init_upldssgm(&mut us, SGM);
-  }
+  if s.mitm { init_upldmitm(&mut ui     ); }
+  if s.sgrp { init_upldsgrp(&mut ug, GRP); }
+  if s.ssgm { init_upldssgm(&mut us, SGM); }
   let ifile = File::open(format!("{}{}", s.inpdr, s.objnm)).unwrap();
   let rdr = BufReader::new(ifile);
   for wline in rdr.lines() {
@@ -40,15 +34,9 @@ pub fn upld_idocdefn(s: SettingsTp) {
     let line  = wline.trim();
     if line.len() > 0 {
       let sline = scan_inpline(line);
-      if s.mitm {
-        get_mitmdata(&sline, &mut ui);
-      }
-      if s.sgrp {
-        get_sgrpdata(&cnn, &sline, &mut ug);
-      }
-      if s.ssgm {
-        get_ssgmdata(&cnn, &sline, &mut us);
-      }
+      if s.mitm { get_mitmdata(      &sline, &mut ui); }
+      if s.sgrp { get_sgrpdata(&cnn, &sline, &mut ug); }
+      if s.ssgm { get_ssgmdata(&cnn, &sline, &mut us); }
     }
   }
   isrt_mitmdata(&cnn, &mut ui);

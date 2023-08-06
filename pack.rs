@@ -11,6 +11,7 @@ mod setup;
 use crate::settings::SettingsTp;
 use setup::{setup_section, setup_segment};
 use build::{proc_edidc, proc_edidd, proc_edids};
+use rblib::{ren_file, pass_filter};
 use rusqlite::Connection;
 use std::fs;
 use std::fs::File;
@@ -69,6 +70,7 @@ pub fn conv_idoc2flat(s: SettingsTp) {
   c.idocx = s.objnm.to_uppercase();
   for entry in fs::read_dir(&s.inpdr).unwrap() {
     let entry = entry.unwrap().path();
+    rblib::print_type_of(&entry);
     if entry.is_dir() {
       continue;
     }
@@ -105,6 +107,7 @@ fn proc_file(cnn: &Connection, c: &mut ConvertTp, inppt: String) {
     if line.len() == 0 { // ignores lines in blank
       continue;
     }
+
     // Gets IDoc number
     if c.idocn.len() == 0 && tokn.len() == 1 &&
        line[0..11] == "IDoc Number".to_string() {
@@ -158,24 +161,4 @@ fn determ_idocprops(cnn: &Connection, idocx: String) -> String {
     [idocx.to_uppercase()], |row| { Ok(idocb = row.get(0).unwrap()) })
     .expect("Error: Idoc type not found in definition DB");
   return idocb;
-}
-
-// Rename files
-pub fn ren_file(mode: &str, curdr: &str, fnm: &str, fex: &str) {
-  let oldnm = format!("{}{}.{}", curdr, fnm, fex);
-  let mut newnm = oldnm.clone();
-  if mode == "inp" {
-    newnm = format!("{}inp_{}_processed.{}", curdr, fnm, fex);
-  } else if mode == "out" {
-    newnm = format!("{}out_{}.{}", curdr, fnm, fex);
-  }
-  fs::rename(oldnm, newnm).expect("File rename failure");
-}
-
-// Indicates if a char string matches one pattern
-pub fn pass_filter(ifilt: &String, filen: &str) -> bool {
-  if filen == ifilt {
-    return true;
-  }
-  true
 }

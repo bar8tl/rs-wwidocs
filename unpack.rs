@@ -10,6 +10,7 @@ use crate::settings::SettingsTp;
 use control::read_control;
 use data::{DidocTp, read_data};
 use outputs::write_outputs;
+use rblib::pass_filter;
 use rusqlite::Connection;
 use std::fs;
 use std::fs::File;
@@ -69,12 +70,4 @@ fn proc_file(cnn: &Connection, d: &mut DidocTp, inppt: &String, idocn: &String) 
   }
   println!("{:?}", d);
   write_outputs(d);
-}
-
-// Indicates if a char string matches one pattern
-fn pass_filter(ifilt: &String, filen: &str) -> bool {
-  if filen == ifilt {
-    return true;
-  }
-  true
 }

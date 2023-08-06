@@ -3,13 +3,10 @@
 //**********************************************************************************
 #![allow(non_snake_case)]
 
-mod config;
-mod params;
-
-use crate::settings::params::{ParameTp, ParamsTp};
 use crate::settings::config::ConfigTp;
 use chrono::Local;
 use chrono::NaiveDateTime;
+use rblib::params::{ParamsTp, ParameTp};
 
 const CNTRL: &str = "EDI_DC40";           // Default values for: CONTROL_CODE,
 const CLIEN: &str = "011";                // CLIENT_CODE,
@@ -57,6 +54,7 @@ impl SettingsTp {
     let mut stg = SettingsTp { ..Default::default() };
     stg.prm = ParamsTp::new_params();
     stg.cfd = ConfigTp::new_config();
+    stg.set_settings("_config.json");
     stg
   }
 
@@ -92,11 +90,12 @@ impl SettingsTp {
     if p.prm1.len() > 0 {
       self.objnm = p.prm1.clone();
     } else {
-      panic!("Error: Not possible to determine EDICOM Type name");
+      panic!("Error: Not possible to determine Object name");
     }
     self.found = false;
     for run in &self.cfd.run {
       if p.optn == run.optn && p.prm1 == run.objnm {
+        self.found = true;
         if p.optn == "cdb" || p.optn == "def" || p.optn == "pck" ||
            p.optn == "upk" || p.optn == "ali" || p.optn == "qry" {
           if run.objnm.len() > 0 { self.objnm = run.objnm.clone(); }
@@ -119,29 +118,119 @@ impl SettingsTp {
           if run.qrydr.len() > 0 { self.qrydr = run.qrydr.clone(); }
           if run.qrynm.len() > 0 { self.qrynm = run.qrynm.clone(); }
         }
-        if p.optn == "def" {
-          self.mitm = true;
-          self.sgrp = false;
-          self.ssgm = false;
-          if p.prm2.len() > 0 {
-            let mflds: Vec<&str> = p.prm2.split('.').collect();
-            for mfld in &mflds {
-              match mfld.to_lowercase().as_str() {
-                ITM => self.mitm = true,
-                GRP => self.sgrp = true,
-                SGM => self.ssgm = true,
-                _   => {
-                  self.mitm = true;
-                  self.sgrp = false;
-                  self.ssgm = false;
-                }
-              }
-            }
-          }
-        }
-        self.found = true;
         break;
       }
+    }
+    if p.optn == "def" {
+      (self.mitm, self.sgrp, self.ssgm) = (true, false, false);
+      if p.prm2.len() > 0 {
+        let mflds: Vec<&str> = p.prm2.split('.').collect();
+        for mfld in &mflds {
+          match mfld.to_lowercase().as_str() {
+            ITM => self.mitm = true,
+            GRP => self.sgrp = true,
+            SGM => self.ssgm = true,
+            _   => { (self.mitm, self.sgrp, self.ssgm) = (true, false, false) }
+          }
+        }
+      }
+    }
+  }
+}
+
+//**********************************************************************************
+// config.rs : Reads config file and gets run parameters (2017-05-24 bar8tl)
+//**********************************************************************************
+mod config {
+  use serde::Deserialize;
+  use serde_json::from_reader;
+  use std::fs::File;
+
+  #[derive(Debug, Clone, Default, Deserialize)]
+  pub struct KonstTp {
+    #[serde(default)]
+    pub CNTRL: String,
+    #[serde(default)]
+    pub CLIEN: String
+  }
+
+  #[derive(Debug, Clone, Default, Deserialize)]
+  pub struct ProgmTp {
+    #[serde(default)]
+    pub dbonm: String,
+    #[serde(default)]
+    pub dbodr: String,
+    #[serde(default)]
+    pub inpdr: String,
+    #[serde(default)]
+    pub outdr: String,
+    #[serde(default)]
+    pub ifilt: String,
+    #[serde(default)]
+    pub ifnam: String,
+    #[serde(default)]
+    pub ofnam: String
+  }
+
+  #[derive(Debug, Clone, Default, Deserialize)]
+  pub struct RunTp {
+    #[serde(default)]
+    pub optn:  String,
+    #[serde(default)]
+    pub objnm: String,
+    #[serde(default)]
+    pub qrynm: String,
+    #[serde(default)]
+    pub dbonm: String,
+    #[serde(default)]
+    pub dbodr: String,
+    #[serde(default)]
+    pub inpdr: String,
+    #[serde(default)]
+    pub outdr: String,
+    #[serde(default)]
+    pub qrydr: String,
+    #[serde(default)]
+    pub ifilt: String,
+    #[serde(default)]
+    pub ifnam: String,
+    #[serde(default)]
+    pub ofnam: String,
+    #[serde(default)]
+    pub rcvpf: String
+  }
+
+  #[derive(Debug, Clone, Default, Deserialize)]
+  pub struct CdbTp {
+    #[serde(default)]
+    pub id   : String,
+    #[serde(default)]
+    pub table: String,
+    #[serde(default)]
+    pub cr   : bool
+  }
+
+  #[derive(Debug, Clone, Default, Deserialize)]
+  pub struct ConfigTp {
+    pub konst: KonstTp,
+    pub progm: ProgmTp,
+    pub run  : Vec<RunTp>,
+    pub cdb  : Vec<CdbTp>
+  }
+
+  impl ConfigTp {
+    pub fn new_config() -> ConfigTp {
+      let cfg = ConfigTp{ ..Default::default() };
+      cfg
+    }
+
+    pub fn get_config(&mut self, fname: &str) {
+      let f = File::open(fname).unwrap();
+      let cfg: ConfigTp = from_reader(f).expect("JSON not well-formed");
+      self.konst = cfg.konst;
+      self.progm = cfg.progm;
+      self.run   = cfg.run;
+      self.cdb   = cfg.cdb;
     }
   }
 }

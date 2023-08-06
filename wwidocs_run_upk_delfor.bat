@@ -1,3 +1,3 @@
-cd c:\rbrust\wwidocs\target\debug\ 
-wwidocs.exe -upk:DELFOR02
+cd c:\rbrust\wwidocs-rs\target\debug\ 
+wwidocs-rs.exe -upk:DELFOR02
 pause

@@ -1,3 +1,3 @@
-cd c:\rbrust\wwidocs\target\debug\ 
-wwidocs.exe -ali:_segma.json
+cd c:\rbrust\wwidocs-rs\target\debug\ 
+wwidocs-rs.exe -ali:_segma.json
 pause
