@@ -1,0 +1,11 @@
+r#"{
+  "sqlst": [
+    {"activ": "yes", "table": "items",
+     "sqlst": "CREATE TABLE IF NOT EXISTS items (idocn TEXT, rname TEXT, dname TEXT, rclas TEXT, rtype TEXT, dtype TEXT, dtext TEXT, level INTEGER, stats TEXT, minlp INTEGER, maxlp INTEGER, lngth INTEGER, seqno INTEGER, strps INTEGER, endps INTEGER, PRIMARY KEY (idocn, rname, dname));"},
+    {"activ": "yes", "table": "struc",
+     "sqlst": "CREATE TABLE IF NOT EXISTS struc (idocn TEXT, strtp TEXT, level INTEGER, prnam TEXT, pseqn INTEGER, pdnam TEXT, pdtyp TEXT, pdqlf TEXT, crnam TEXT, cseqn INTEGER, cdnam TEXT, cdtyp TEXT, cdqlf TEXT, PRIMARY KEY (idocn, strtp, prnam, pseqn, pdnam, crnam, cseqn, cdnam));"},
+    {"activ": "yes", "table": "segma",
+     "sqlst": "CREATE TABLE IF NOT EXISTS segma (idocn TEXT, segtp TEXT, segdf TEXT, PRIMARY KEY (idocn, segtp, segdf));"}
+  ]
+}
+"#

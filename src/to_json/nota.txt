@@ -1,0 +1,11 @@
+SELECT a.idocn, a.level, a.pseqn, a.pdnam, a.pdtyp, a.pdqlf, a.cseqn, a.cdnam, a.cdtyp, a.cdqlf, b.dname, b.seqno, b.strps, b.endps FROM struc a LEFT JOIN items b ON (a.idocn = b.idocn and a.cdtyp = b.rname) WHERE a.idocn="/RB04/YP3_INVOIC02_XML" and a.strtp="SGM" and a.cdnam="E2EDK01005"  ORDER BY a.idocn, a.strtp, a.pseqn, a.prnam, a.pdnam, b.seqno;
+
+SELECT * FROM struc where idocn="/RB04/YP3_INVOIC02_XML" and strtp="SGM" and pdtyp="E1EDK01";
+
+
+idocn                  strtp level prnam   pseqn pdnam pdtyp      pdqlf crnam   cseqn cdnam cdtyp                    cdqlf
+/RB04/YP3_INVOIC02_XML|SGM  |1    |SEGMENT|1    |     |E2EDK01005|     |SEGMENT|2    |     |/RB04/YP3_E1EDK01_XML001|
+
+idocn                  rname                    dname                    rclas                    rtype   dtype                 dtext                       level stats    minlp maxlp lngth seqno strps endps
+/RB04/YP3_INVOIC02_XML|SEGMENT                 |/RB04/YP3_E1EDK01_XML001|/RB04/YP3_E1EDK01_XML001|SEGMENT|/RB04/YP3_E1EDK01_XML|                           |2    |OPTIONAL|1    |1    |0    |3    |0    |0
+/RB04/YP3_INVOIC02_XML|/RB04/YP3_E1EDK01_XML001|ORI_ODN_NUMBER          |SEGMENT                 |FIELDS |CHARACTER            |Character Field Length = 10|0    |        |0    |0    |10   |7    |190  |199

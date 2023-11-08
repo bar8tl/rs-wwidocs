@@ -1,0 +1,8 @@
+{
+  "progm": {
+    "dbonm": "idoctp.db",
+    "dbodr": ".\\",
+    "inpdr": ".\\idoctypes\\",
+    "outdr": ".\\",
+  }
+}
