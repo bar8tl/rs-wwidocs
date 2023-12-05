@@ -4,7 +4,7 @@ use crate::to_json::symbols::{OUTCTRL, OUTDATA, OUTSEGM};
 use crate::to_json::types::{DidocTp, SdataTp, SsegmTp};
 use serde_json;
 use std::fs::File;
-use std::io::{BufWriter, Write};
+use std::io::Write;
 
 pub fn write_json_file(d: &mut DidocTp) {
   d.ldata.sdata.push(SdataTp {
@@ -21,24 +21,22 @@ pub fn write_json_file(d: &mut DidocTp) {
   });
   let ofnam = format!("{}{}-{}", d.outdr, d.flnam, format!("{}", d.setno));
   if OUTCTRL {
-    let file = File::create(format!("{}-control.json", ofnam)).expect("error");
-    let mut writer = BufWriter::new(file);
-    serde_json::to_writer(&mut writer, &d.lctrl).expect("error");
-    writer.flush().expect("error");
+    let mut file = File::create(format!("{}-control.json", ofnam)).expect("error");
+    let fctrl = serde_json::to_string_pretty(&d.lctrl).unwrap();
+    let bctrl: &[u8] = fctrl.as_bytes();
+    file.write_all(&bctrl).unwrap();
   }
   if OUTDATA {
-    let file = File::create(format!("{}-data.json", ofnam)).expect("error");
-    let mut writer = BufWriter::new(file);
-    serde_json::to_writer(&mut writer, 
-      &serde_json::to_string_pretty(&d.ldata).unwrap()).expect("error");
-    writer.flush().expect("error");
+    let mut file = File::create(format!("{}-data.json", ofnam)).expect("error");
+    let fdata = serde_json::to_string_pretty(&d.ldata).unwrap();
+    let bdata: &[u8] = fdata.as_bytes();
+    file.write_all(&bdata).unwrap();
   }
   if OUTSEGM {
-    let file = File::create(format!("{}-segment.json", ofnam)).expect("error");
-    let mut writer = BufWriter::new(file);
-    serde_json::to_writer(&mut writer, 
-      &serde_json::to_string_pretty(&d.lsegm).unwrap()).expect("error");
-    writer.flush().expect("error");
+    let mut file = File::create(format!("{}-segment.json", ofnam)).expect("error");
+    let fsegm = serde_json::to_string_pretty(&d.lsegm).unwrap();
+    let bsegm: &[u8] = fsegm.as_bytes();
+    file.write_all(&bsegm).unwrap();
   }
   d.sdata.rdata = Default::default();
   d.ldata.sdata = Default::default();

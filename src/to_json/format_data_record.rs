@@ -2,7 +2,7 @@
 // segment metadata portion (2021-07-01 bar8tl)
 use crate::idoc_definitn::types::OutitmTp;
 use crate::to_json::calc_segmt_counters::calc_segmt_counters;
-use crate::to_json::symbols::{SDATA, SEGNAM, SGM};
+use crate::to_json::symbols::{SDATA, SEGNAM};
 use crate::to_json::types::{DidocTp, RdataTp, FieldTp};
 use rusqlite::Connection;
 
@@ -43,7 +43,7 @@ pub fn format_data_record(cnn: &Connection, d: &mut DidocTp, iline: &str,
       rdata.recno = d.recno.clone();
     }
     if f.dname == SDATA {
-      calc_segmt_counters(cnn, d, iline, idocn, SGM, &g.dname, rdata.level);
+      calc_segmt_counters(cnn, d, iline, idocn, &g.dname, rdata.level);
       continue;
     }
     rdata.field.push(FieldTp{ key: f.dname, val: cdval });

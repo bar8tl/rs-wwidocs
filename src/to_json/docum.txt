@@ -1,0 +1,90 @@
+FIELD MAPPING
+
+A - STRUCTURE RECORD
+      |IDOC-GROUP       |GROUP-GROUP      |IDOC-SEGMENT     |SEGMENT-SEGMENT  |TEXT                          |
+------|-----------------|-----------------|-----------------|-----------------|------------------------------|
+*idocn|Ex/Ba-Name       |Ex/Ba-Name       |Ex/Ba-Name       |Ex/Ba-Name       |IDOC name (Basic or Extension)|<-+
+*strtp|"GRP"            |"GRP"            |"SGM"            |"SGM"            |Structure type                |  |
+ level|auto-gen         |auto-gen         |auto-gen         |auto-gen         |Hierarchical level            |  |
+*prnam|p.rname="IDOC"   |p.rname="GROUP"  |p.rname="IDOC"   |p.rname="SEGMENT"|Parent record name            |  |
+*pseqn|p.pseqn=autogen  |p.pseqn=autogen  |p.pseqn=autogen  |p.pseqn=autogen  |Parent sequence number        |  |
+ pdnam|p.dname=Ba-Name  |p.dname=Group#   |""               |p.dname=Segm-ID  |Parent data element name      |  |
+*pdtyp|p.dname=Ba-Name  |p.dname=Group#   |p.dname=Ba-Name  |p.dtype=Segm-Type|Parent data element type      |  |
+ pdqlf|""               |""               |"QUAL"           |"QUAL"           |Parent data record qualified  |  |
+*crnam|c.rname="GROUP"  |c.rname="GROUP"  |"SEGMENT"        |"SEGMENT"        |Child record name             |  |
+*cseqn|p.seqno=Group-Seq|p.seqno=Group-Seq|p.seqno=Group-Seq|p.seqno=Seqno    |Child sequence number         |  |
+ cdnam|c.dname=Group#   |c.dname=Group#   |                 |c.dname=Segm-Name|Child data element name       |  |   join
+*cdtyp|c.dname=Group#   |c.dname=Group#   |E2EDK01005       |c.dname=Segm-Type|Child data element type       |<---+
+ cdqlf|""               |""               |                 |"QUAL"           |Child data record qualified   |  | |
+                                                                                                                | |
+B - ITEM RECORD                                                                                                 | |
+      |IDOC      |GROUP     |SEGMENT   |SGM-FIELD |RECRD-FIELD              |TEXT                          |    | |
+------|----------|----------|----------|----------|-------------------------|------------------------------|    | |
+*idocn|Ex/Ba-Name|Ex/Ba-Name|Ex/Ba-Name|Ex/Ba-Name|Ex/Ba-Name               |IDOC name (Basic or Extension)|<---+ |
+*rname|"IDOC"    |"GROUP"   |"SEGMENT" |Segm-ID   |"CONTROL"/"DATA"/"STATUS"|Record Name                   |<-----+
+*dname|Basic-IDoc|Group#    |Segm-ID   |Field-Name|Field-Name               |Data Name                     |
+ rclas|Basic-IDoc|Group#    |Segm-ID   |"SEGMENT" |"RECORD"                 |Record Class                  |
+ rtype|"IDOC"    |"GROUP"   |"SEGMENT" |"FIELDS"  |"FIELDS"                 |Record Type                   |
+ dtype|""        |""        |Segm-Type | Data-Type| Data-Type               |Data Type                     |
+ dtext|Extsn-name|Group#    |Qualified |Field-Desc|Field-Desc               |Data Text                     |
+ level|0         |Level     |Level     |0         |0                        |Level                         |
+ stats|""        |Status    |Status    |""        |""                       |Status                        |
+ minlp|0         |Loop-Min  |Loop-Min  |0         |0                        |Min Loop                      |
+ maxlp|0         |Loop-Max  |Loop-Max  |0         |0                        |Max Loop                      |
+ lngth|0         |0         |0         |Length    |Length                   |Length                        |
+ seqno|0         |auto-gen  |Auto-gen  |Field-Seqn|Field-Seqn               |Sequence Number               |
+ strps|0         |0         |0         |Start-Pos |Start-Pos                |Start Position                |
+ endps|0         |0         |0         |End-Pos   |End-Pos                  |End Position                  |
+
+
+EXAMPLE
+
+A - STRUCTURE RECORD
+      |IDOC-GROUP            |GROUP-GROUP           |IDOC-SEGMENT          |SEGMENT-SEGMENT         |TEXT                               |
+------|----------------------|----------------------|----------------------|------------------------|-----------------------------------|
+*idocn|/RB04/YP3_INVOIC02_XML|/RB04/YP3_INVOIC02_XML|/RB04/YP3_INVOIC02_XML|/RB04/YP3_INVOIC02_XML  |IDOC name (Basic or Extension)     |<-+
+*strtp|"GRP"                 |"GRP"                 |"SGM"                 |"SGM"                   |Structure type                     |  |
+ level|0                     |0                     |0                     |1                       |Hierarchical level                 |  |
+*prnam|"IDOC"                |"GROUP"               |"IDOC"                |"SEGMENT"               |Parent record name                 |  |
+*pseqn|1                     |3                     |0                     |1                       |Parent sequence number             |  |
+ pdnam|INVOIC02              |03                    |                      |                        |Parent data element name           |  |
+*pdtyp|INVOIC02              |3                     |INVOIC02              |E2EDK01005              |Parent data element type           |  |
+ pdqlf|                      |                      |                      |                        |Parent data record qualified       |  |
+*crnam|"GROUP"               |"GROUP"               |"SEGMENT"             |"SEGMENT"               |Child record name                  |  |
+*cseqn|1                     |1                     |1                     |2                       |Child sequence number              |  |
+ cdnam|01                    |04                    |                      |                        |Child data element name            |  |   join
+*cdtyp|1                     |4                     |E2EDK01005            |/RB04/YP3_E1EDK01_XML001|Child data element type            |<---+
+ cdqlf|                      |                      |                      |                        |Child data record qualified        |  | |
+                                                                                                                                           | |
+B - ITEM RECORD                                                                                                                            | |
+      |IDOC                  |GROUP                 |SEGMENT                 |FIELD                      |TEXT                          |  | |
+------|----------------------|----------------------|------------------------|---------------------------|------------------------------|  | |
+*idocn|/RB04/YP3_INVOIC02_XML|/RB04/YP3_INVOIC02_XML|/RB04/YP3_INVOIC02_XML  |/RB04/YP3_INVOIC02_XML     |IDOC name (Basic or Extension)|<-+ |
+*rname|"IDOC"                |"GROUP"               |"SEGMENT"               |/RB04/YP3_E1EDK01_XML001   |Record Name                   |<---+
+*dname|INVOIC02              |1                     |/RB04/YP3_E1EDK01_XML001|ORI_ODN_NUMBER             |Data Name                     |
+ rclas|INVOIC02              |1                     |/RB04/YP3_E1EDK01_XML001|"SEGMENT"                  |Record Class                  |
+ rtype|"IDOC"                |"GROUP"               |"SEGMENT"               |"FIELDS"                   |Record Type                   |
+ dtype|                      |                      |/RB04/YP3_E1EDK01_XML   |CHARACTER                  |Data Type                     |
+ dtext|/RB04/YP3_INVOIC02_XML|1                     |                        |Character Field Length = 10|Data Text                     |
+ level|0                     |1                     |2                       |0                          |Level                         |
+ stats|                      |MANDATORY             |OPTIONAL                |                           |Status                        |
+ minlp|0                     |1                     |1                       |0                          |Min Loop                      |
+ maxlp|0                     |1                     |1                       |0                          |Max Loop                      |
+ lngth|0                     |0                     |0                       |10                         |Length                        |
+ seqno|0                     |1                     |3                       |7                          |Sequence Number               |
+ strps|0                     |0                     |0                       |190                        |Start Position                |
+ endps|0                     |0                     |0                       |199                        |End Position                  |
+
+SELECT
+a.idocn, a.level, a.pseqn, a.pdnam, a.pdtyp, a.pdqlf, a.cseqn, a.cdnam, a.cdtyp, a.cdqlf,
+b.dname, b.seqno, b.strps, b.endps
+FROM struc a LEFT JOIN items b ON (
+a.idocn = b.idocn and
+a.cdtyp = b.rname)
+WHERE
+a.idocn="/RB04/YP3_INVOIC02_XML" and
+a.strtp="SGM" and
+a.cdnam="E2EDK01005"
+ORDER BY
+a.idocn, a.strtp, a.pseqn, a.prnam, a.pdnam,
+b.seqno;

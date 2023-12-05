@@ -1,5 +1,4 @@
 echo off
-cd c:\rbrust\wwidocs\target\debug\
 echo 1.  delfor02
 echo 2.  delvry03
 echo 3.  delvry05
@@ -56,150 +55,150 @@ IF %opt% == 99 goto exit
 
 :s01
 echo on
-wwidocs -def:delfor02.txt:itm.grp.sgm
+wwidocs-rs -def:delfor02.txt:itm.grp.sgm
 goto exit
 
 :s02
 echo on
-wwidocs -def:delvry03.txt:itm.grp.sgm
+wwidocs-rs -def:delvry03.txt:itm.grp.sgm
 goto exit
 
 :s03
 echo on
-wwidocs -def:delvry05.txt:itm.grp.sgm
+wwidocs-rs -def:delvry05.txt:itm.grp.sgm
 goto exit
 
 :s04
 echo on
-wwidocs -def:delvry07.txt:itm.grp.sgm
+wwidocs-rs -def:delvry07.txt:itm.grp.sgm
 goto exit
 
 :s05
 echo on
-wwidocs -def:invoic01.txt:itm.grp.sgm
+wwidocs-rs -def:invoic01.txt:itm.grp.sgm
 goto exit
 
 :s06
 echo on
-wwidocs -def:invoic02.txt:itm.grp.sgm
+wwidocs-rs -def:invoic02.txt:itm.grp.sgm
 goto exit
 
 :s07
 echo on
-wwidocs -def:orders01.txt:itm.grp.sgm
+wwidocs-rs -def:orders01.txt:itm.grp.sgm
 goto exit
 
 :s08
 echo on
-wwidocs -def:orders05.txt:itm.grp.sgm
+wwidocs-rs -def:orders05.txt:itm.grp.sgm
 goto exit
 
 :s09
 echo on
-wwidocs -def:seqjit03.txt:itm.grp.sgm
+wwidocs-rs -def:seqjit03.txt:itm.grp.sgm
 goto exit
 
 :s10
 echo on
-wwidocs -def:systat01.txt:itm.grp.sgm
+wwidocs-rs -def:systat01.txt:itm.grp.sgm
 goto exit
 
 :s11
 echo on
-wwidocs -def:y04c_shp_s09_asn.txt:itm.grp.sgm
+wwidocs-rs -def:y04c_shp_s09_asn.txt:itm.grp.sgm
 goto exit
 
 :s12
 echo on
-wwidocs -def:y04vdelvry03.txt:itm.grp.sgm
+wwidocs-rs -def:y04vdelvry03.txt:itm.grp.sgm
 goto exit
 
 :s13
 echo on
-wwidocs -def:y04vorders05.txt:itm.grp.sgm
+wwidocs-rs -def:y04vorders05.txt:itm.grp.sgm
 goto exit
 
 :s14
 echo on
-wwidocs -def:y04vseqjit03.txt:itm.grp.sgm
+wwidocs-rs -def:y04vseqjit03.txt:itm.grp.sgm
 goto exit
 
 :s15
 echo on
-wwidocs -def:z48v_invoic02_ex.txt:itm.grp.sgm
+wwidocs-rs -def:z48v_invoic02_ex.txt:itm.grp.sgm
 goto exit
 
 :s16
 echo on
-wwidocs -def:_-rb04_-yc1_pexr2002.txt:itm.grp.sgm
+wwidocs-rs -def:_-rb04_-yc1_pexr2002.txt:itm.grp.sgm
 goto exit
 
 :s17
 echo on
-wwidocs -def:_-rb04_-yp3_delvry05_824.txt:itm.grp.sgm
+wwidocs-rs -def:_-rb04_-yp3_delvry05_824.txt:itm.grp.sgm
 goto exit
 
 :s18
 echo on
-wwidocs -def:_-rb04_-yp3_delvry_rbna.txt:itm.grp.sgm
+wwidocs-rs -def:_-rb04_-yp3_delvry_rbna.txt:itm.grp.sgm
 goto exit
 
 :s19
 echo on
-wwidocs -def:_-rb04_-yp3_delvry_rbna_vw.txt:itm.grp.sgm
+wwidocs-rs -def:_-rb04_-yp3_delvry_rbna_vw.txt:itm.grp.sgm
 goto exit
 
 :s20
 echo on
-wwidocs -def:_-rb04_-yp3_invoic02.txt:itm.grp.sgm
+wwidocs-rs -def:_-rb04_-yp3_invoic02.txt:itm.grp.sgm
 goto exit
 
 :s21
 echo on
-wwidocs -def:_-rb04_-yp3_invoic02_cu.txt:itm.grp.sgm
+wwidocs-rs -def:_-rb04_-yp3_invoic02_cu.txt:itm.grp.sgm
 goto exit
 
 :s22
 echo on
-wwidocs -def:_-rb04_-yp3_invoic02_intrace.txt:itm.grp.sgm
+wwidocs-rs -def:_-rb04_-yp3_invoic02_intrace.txt:itm.grp.sgm
 goto exit
 
 :s23
 echo on
-wwidocs -def:_-rb04_-yp3_invoic02_it.txt:itm.grp.sgm
+wwidocs-rs -def:_-rb04_-yp3_invoic02_it.txt:itm.grp.sgm
 goto exit
 
 :s24
 echo on
-wwidocs -def:_-rb04_-yp3_invoic02_xml.txt:itm.grp.sgm
+wwidocs-rs -def:_-rb04_-yp3_invoic02_xml.txt:itm.grp.sgm
 goto exit
 
 :s90
 echo on
-wwidocs -def:delfor02.txt:itm.grp.sgm
-wwidocs -def:delvry03.txt:itm.grp.sgm
-wwidocs -def:delvry05.txt:itm.grp.sgm
-wwidocs -def:delvry07.txt:itm.grp.sgm
-wwidocs -def:invoic01.txt:itm.grp.sgm
-wwidocs -def:invoic02.txt:itm.grp.sgm
-wwidocs -def:orders01.txt:itm.grp.sgm
-wwidocs -def:orders05.txt:itm.grp.sgm
-wwidocs -def:seqjit03.txt:itm.grp.sgm
-wwidocs -def:systat01.txt:itm.grp.sgm
-wwidocs -def:y04c_shp_s09_asn.txt:itm.grp.sgm
-wwidocs -def:y04vdelvry03.txt:itm.grp.sgm
-wwidocs -def:y04vorders05.txt:itm.grp.sgm
-wwidocs -def:y04vseqjit03.txt:itm.grp.sgm
-wwidocs -def:z48v_invoic02_ex.txt:itm.grp.sgm
-wwidocs -def:_-rb04_-yc1_pexr2002.txt:itm.grp.sgm
-wwidocs -def:_-rb04_-yp3_delvry05_824.txt:itm.grp.sgm
-wwidocs -def:_-rb04_-yp3_delvry_rbna.txt:itm.grp.sgm
-wwidocs -def:_-rb04_-yp3_delvry_rbna_vw.txt:itm.grp.sgm
-wwidocs -def:_-rb04_-yp3_invoic02.txt:itm.grp.sgm
-wwidocs -def:_-rb04_-yp3_invoic02_cu.txt:itm.grp.sgm
-wwidocs -def:_-rb04_-yp3_invoic02_intrace.txt:itm.grp.sgm
-wwidocs -def:_-rb04_-yp3_invoic02_it.txt:itm.grp.sgm
-wwidocs -def:_-rb04_-yp3_invoic02_xml.txt:itm.grp.sgm
+wwidocs-rs -def:delfor02.txt:itm.grp.sgm
+wwidocs-rs -def:delvry03.txt:itm.grp.sgm
+wwidocs-rs -def:delvry05.txt:itm.grp.sgm
+wwidocs-rs -def:delvry07.txt:itm.grp.sgm
+wwidocs-rs -def:invoic01.txt:itm.grp.sgm
+wwidocs-rs -def:invoic02.txt:itm.grp.sgm
+wwidocs-rs -def:orders01.txt:itm.grp.sgm
+wwidocs-rs -def:orders05.txt:itm.grp.sgm
+wwidocs-rs -def:seqjit03.txt:itm.grp.sgm
+wwidocs-rs -def:systat01.txt:itm.grp.sgm
+wwidocs-rs -def:y04c_shp_s09_asn.txt:itm.grp.sgm
+wwidocs-rs -def:y04vdelvry03.txt:itm.grp.sgm
+wwidocs-rs -def:y04vorders05.txt:itm.grp.sgm
+wwidocs-rs -def:y04vseqjit03.txt:itm.grp.sgm
+wwidocs-rs -def:z48v_invoic02_ex.txt:itm.grp.sgm
+wwidocs-rs -def:_-rb04_-yc1_pexr2002.txt:itm.grp.sgm
+wwidocs-rs -def:_-rb04_-yp3_delvry05_824.txt:itm.grp.sgm
+wwidocs-rs -def:_-rb04_-yp3_delvry_rbna.txt:itm.grp.sgm
+wwidocs-rs -def:_-rb04_-yp3_delvry_rbna_vw.txt:itm.grp.sgm
+wwidocs-rs -def:_-rb04_-yp3_invoic02.txt:itm.grp.sgm
+wwidocs-rs -def:_-rb04_-yp3_invoic02_cu.txt:itm.grp.sgm
+wwidocs-rs -def:_-rb04_-yp3_invoic02_intrace.txt:itm.grp.sgm
+wwidocs-rs -def:_-rb04_-yp3_invoic02_it.txt:itm.grp.sgm
+wwidocs-rs -def:_-rb04_-yp3_invoic02_xml.txt:itm.grp.sgm
 goto exit
 
 :exit

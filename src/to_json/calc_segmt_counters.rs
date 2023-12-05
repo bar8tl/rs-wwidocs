@@ -7,7 +7,7 @@ use rusqlite::Connection;
 // proc_segmt.rs: Process Segment Data - Determines segment Qualifier and Instance
 // Number
 pub fn calc_segmt_counters(cnn: &Connection, d: &mut DidocTp, iline: &str,
-  idocn: &String, strtp: &str, cdnam: &String, level: usize) {
+  idocn: &String, cdnam: &String, level: usize) {
   let mut instn: i32    = -1;
   let mut ident: String = String::new();
   if level == d.l as usize {
