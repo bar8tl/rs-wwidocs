@@ -1,4 +1,4 @@
-// crea_tablelist.rs - Sqlite3 DB tables creation for local acks storage
+// crea_tablelist.rs - Sqlite3 DB tables creation for local IDOC definitions
 // (2021-07-01 bar8tl)
 use rblib::create_sqlite3_tablelist::{TlistTp, create_sqlite3_tablelist};
 use serde::Deserialize;
@@ -18,7 +18,7 @@ struct ItablesTp {
   sqlst: Vec<SqlstTp>
 }
 
-pub fn create_tablelist(dbopt: String) {
+pub fn crea_tablelist(dbopt: String) {
   let it: ItablesTp = serde_json::from_str(ITABLES).unwrap();
   let mut tlist: Vec<TlistTp> = Vec::with_capacity(it.sqlst.len());
   for sql in &it.sqlst {

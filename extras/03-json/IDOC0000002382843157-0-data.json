@@ -1,0 +1,4585 @@
+{
+  "sdata": [
+    {
+      "instn": 0,
+      "rdata": [
+        {
+          "segmn": "E1EDK01",
+          "qualf": "",
+          "level": 1,
+          "recno": 1,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDK01005"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000001"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000000"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "01"
+            }
+          ]
+        },
+        {
+          "segmn": "/RB04/YP3_E1EDK01_XML",
+          "qualf": "",
+          "level": 2,
+          "recno": 2,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "/RB04/YP3_E1EDK01_XML001"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000002"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000001"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "02"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDKA1",
+          "qualf": "QUALF",
+          "level": 2,
+          "recno": 3,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDKA1003"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000003"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000001"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "02"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDKA1",
+          "qualf": "QUALF",
+          "level": 2,
+          "recno": 4,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDKA1003"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000004"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000001"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "02"
+            }
+          ]
+        },
+        {
+          "segmn": "/RB04/YP3_E1EDKA1_XML",
+          "qualf": "",
+          "level": 3,
+          "recno": 5,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "/RB04/YP3_E1EDKA1_XML001"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000005"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000004"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDKA1",
+          "qualf": "QUALF",
+          "level": 2,
+          "recno": 6,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDKA1003"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000006"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000004"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "02"
+            }
+          ]
+        },
+        {
+          "segmn": "/RB04/YP3_E1EDKA1_XML",
+          "qualf": "",
+          "level": 3,
+          "recno": 7,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "/RB04/YP3_E1EDKA1_XML001"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000007"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000006"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDKA1",
+          "qualf": "QUALF",
+          "level": 2,
+          "recno": 8,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDKA1003"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000008"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000006"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "02"
+            }
+          ]
+        },
+        {
+          "segmn": "/RB04/YP3_E1EDKA1_XML",
+          "qualf": "",
+          "level": 3,
+          "recno": 9,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "/RB04/YP3_E1EDKA1_XML001"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000009"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000008"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDKA1",
+          "qualf": "QUALF",
+          "level": 2,
+          "recno": 10,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDKA1003"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000010"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000008"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "02"
+            }
+          ]
+        },
+        {
+          "segmn": "/RB04/YP3_E1EDKA1_XML",
+          "qualf": "",
+          "level": 3,
+          "recno": 11,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "/RB04/YP3_E1EDKA1_XML001"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000011"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000010"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDK02",
+          "qualf": "QUALF",
+          "level": 2,
+          "recno": 12,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDK02"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000012"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000010"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "02"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDK02",
+          "qualf": "QUALF",
+          "level": 2,
+          "recno": 13,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDK02"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000013"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000010"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "02"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDK02",
+          "qualf": "QUALF",
+          "level": 2,
+          "recno": 14,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDK02"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000014"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000010"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "02"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDK02",
+          "qualf": "QUALF",
+          "level": 2,
+          "recno": 15,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDK02"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000015"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000010"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "02"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDK02",
+          "qualf": "QUALF",
+          "level": 2,
+          "recno": 16,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDK02"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000016"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000010"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "02"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDK02",
+          "qualf": "QUALF",
+          "level": 2,
+          "recno": 17,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDK02"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000017"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000010"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "02"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDK02",
+          "qualf": "QUALF",
+          "level": 2,
+          "recno": 18,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDK02"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000018"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000010"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "02"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDK03",
+          "qualf": "QUALF",
+          "level": 2,
+          "recno": 19,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDK03"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000019"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000010"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "02"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDK03",
+          "qualf": "QUALF",
+          "level": 2,
+          "recno": 20,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDK03"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000020"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000010"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "02"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDK03",
+          "qualf": "QUALF",
+          "level": 2,
+          "recno": 21,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDK03"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000021"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000010"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "02"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDK03",
+          "qualf": "QUALF",
+          "level": 2,
+          "recno": 22,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDK03"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000022"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000010"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "02"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDK03",
+          "qualf": "QUALF",
+          "level": 2,
+          "recno": 23,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDK03"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000023"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000010"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "02"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDK03",
+          "qualf": "QUALF",
+          "level": 2,
+          "recno": 24,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDK03"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000024"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000010"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "02"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDK04",
+          "qualf": "QUALF",
+          "level": 2,
+          "recno": 25,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDK04001"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000025"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000010"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "02"
+            }
+          ]
+        },
+        {
+          "segmn": "/RB04/YP3_E1EDK04_XML",
+          "qualf": "",
+          "level": 3,
+          "recno": 26,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "/RB04/YP3_E1EDK04_XML000"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000026"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000025"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDK17",
+          "qualf": "QUALF",
+          "level": 2,
+          "recno": 27,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDK17"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000027"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000025"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "02"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDK17",
+          "qualf": "QUALF",
+          "level": 2,
+          "recno": 28,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDK17"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000028"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000025"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "02"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDK18",
+          "qualf": "QUALF",
+          "level": 2,
+          "recno": 29,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDK18"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000029"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000025"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "02"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDK18",
+          "qualf": "QUALF",
+          "level": 2,
+          "recno": 30,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDK18"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000030"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000025"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "02"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDK28",
+          "qualf": "",
+          "level": 2,
+          "recno": 31,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDK28001"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000031"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000025"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "02"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDK28",
+          "qualf": "",
+          "level": 2,
+          "recno": 32,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDK28001"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000032"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000025"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "02"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDK28",
+          "qualf": "",
+          "level": 2,
+          "recno": 33,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDK28001"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000033"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000025"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "02"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDK28",
+          "qualf": "",
+          "level": 2,
+          "recno": 34,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDK28001"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000034"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000025"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "02"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDK28",
+          "qualf": "",
+          "level": 2,
+          "recno": 35,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDK28001"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000035"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000025"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "02"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDK28",
+          "qualf": "",
+          "level": 2,
+          "recno": 36,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDK28001"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000036"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000025"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "02"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDK28",
+          "qualf": "",
+          "level": 2,
+          "recno": 37,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDK28001"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000037"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000025"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "02"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDK28",
+          "qualf": "",
+          "level": 2,
+          "recno": 38,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDK28001"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000038"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000025"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "02"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDK28",
+          "qualf": "",
+          "level": 2,
+          "recno": 39,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDK28001"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000039"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000025"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "02"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDK29",
+          "qualf": "",
+          "level": 2,
+          "recno": 40,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDK29003"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000040"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000025"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "02"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDK14",
+          "qualf": "QUALF",
+          "level": 2,
+          "recno": 41,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDK14"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000041"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000025"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "02"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDK14",
+          "qualf": "QUALF",
+          "level": 2,
+          "recno": 42,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDK14"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000042"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000025"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "02"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDK14",
+          "qualf": "QUALF",
+          "level": 2,
+          "recno": 43,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDK14"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000043"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000025"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "02"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDK14",
+          "qualf": "QUALF",
+          "level": 2,
+          "recno": 44,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDK14"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000044"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000025"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "02"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDK14",
+          "qualf": "QUALF",
+          "level": 2,
+          "recno": 45,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDK14"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000045"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000025"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "02"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDK14",
+          "qualf": "QUALF",
+          "level": 2,
+          "recno": 46,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDK14"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000046"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000025"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "02"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDK14",
+          "qualf": "QUALF",
+          "level": 2,
+          "recno": 47,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDK14"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000047"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000025"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "02"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP01",
+          "qualf": "",
+          "level": 2,
+          "recno": 48,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP01011"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000048"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000025"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "02"
+            }
+          ]
+        },
+        {
+          "segmn": "/RB04/YP3_E1EDP01_XML",
+          "qualf": "",
+          "level": 3,
+          "recno": 49,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "/RB04/YP3_E1EDP01_XML001"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000049"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000048"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP02",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 50,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP02002"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000050"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000048"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP02",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 51,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP02002"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000051"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000048"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP02",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 52,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP02002"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000052"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000048"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP03",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 53,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP03"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000053"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000048"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP03",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 54,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP03"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000054"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000048"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP03",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 55,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP03"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000055"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000048"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP03",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 56,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP03"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000056"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000048"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP03",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 57,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP03"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000057"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000048"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP19",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 58,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP19003"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000058"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000048"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP19",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 59,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP19003"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000059"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000048"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP19",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 60,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP19003"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000060"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000048"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP19",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 61,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP19003"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000061"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000048"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP19",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 62,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP19003"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000062"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000048"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP26",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 63,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP26"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000063"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000048"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP26",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 64,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP26"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000064"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000048"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP26",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 65,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP26"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000065"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000048"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP26",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 66,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP26"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000066"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000048"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP26",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 67,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP26"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000067"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000048"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP26",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 68,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP26"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000068"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000048"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP26",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 69,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP26"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000069"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000048"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP26",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 70,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP26"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000070"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000048"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP26",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 71,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP26"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000071"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000048"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP26",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 72,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP26"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000072"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000048"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDPA1",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 73,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDPA1003"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000073"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000048"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDPA1",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 74,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDPA1003"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000074"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000048"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP05",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 75,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP05002"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000075"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000048"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP04",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 76,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP04001"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000076"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000048"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP28",
+          "qualf": "",
+          "level": 3,
+          "recno": 77,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP28003"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000077"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000048"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP01",
+          "qualf": "",
+          "level": 2,
+          "recno": 78,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP01011"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000078"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000048"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "02"
+            }
+          ]
+        },
+        {
+          "segmn": "/RB04/YP3_E1EDP01_XML",
+          "qualf": "",
+          "level": 3,
+          "recno": 79,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "/RB04/YP3_E1EDP01_XML001"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000079"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000078"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP02",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 80,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP02002"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000080"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000078"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP02",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 81,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP02002"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000081"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000078"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP02",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 82,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP02002"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000082"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000078"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP03",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 83,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP03"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000083"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000078"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP03",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 84,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP03"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000084"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000078"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP03",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 85,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP03"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000085"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000078"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP03",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 86,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP03"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000086"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000078"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP03",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 87,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP03"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000087"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000078"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP19",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 88,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP19003"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000088"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000078"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP19",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 89,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP19003"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000089"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000078"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP19",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 90,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP19003"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000090"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000078"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP19",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 91,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP19003"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000091"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000078"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP19",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 92,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP19003"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000092"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000078"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP19",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 93,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP19003"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000093"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000078"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP26",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 94,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP26"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000094"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000078"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP26",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 95,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP26"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000095"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000078"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP26",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 96,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP26"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000096"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000078"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP26",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 97,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP26"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000097"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000078"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP26",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 98,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP26"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000098"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000078"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP26",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 99,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP26"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000099"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000078"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP26",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 100,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP26"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000100"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000078"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP26",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 101,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP26"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000101"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000078"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP26",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 102,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP26"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000102"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000078"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP26",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 103,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP26"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000103"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000078"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDPA1",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 104,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDPA1003"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000104"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000078"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDPA1",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 105,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDPA1003"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000105"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000078"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP05",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 106,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP05002"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000106"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000078"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP04",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 107,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP04001"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000107"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000078"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP28",
+          "qualf": "",
+          "level": 3,
+          "recno": 108,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP28003"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000108"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000078"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP01",
+          "qualf": "",
+          "level": 2,
+          "recno": 109,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP01011"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000109"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000078"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "02"
+            }
+          ]
+        },
+        {
+          "segmn": "/RB04/YP3_E1EDP01_XML",
+          "qualf": "",
+          "level": 3,
+          "recno": 110,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "/RB04/YP3_E1EDP01_XML001"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000110"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000109"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP02",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 111,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP02002"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000111"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000109"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP02",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 112,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP02002"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000112"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000109"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP02",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 113,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP02002"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000113"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000109"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP03",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 114,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP03"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000114"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000109"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP03",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 115,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP03"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000115"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000109"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP03",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 116,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP03"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000116"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000109"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP03",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 117,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP03"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000117"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000109"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP03",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 118,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP03"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000118"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000109"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP19",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 119,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP19003"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000119"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000109"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP19",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 120,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP19003"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000120"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000109"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP19",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 121,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP19003"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000121"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000109"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP19",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 122,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP19003"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000122"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000109"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP19",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 123,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP19003"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000123"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000109"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP26",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 124,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP26"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000124"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000109"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP26",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 125,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP26"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000125"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000109"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP26",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 126,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP26"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000126"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000109"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP26",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 127,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP26"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000127"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000109"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP26",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 128,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP26"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000128"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000109"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP26",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 129,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP26"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000129"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000109"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP26",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 130,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP26"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000130"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000109"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP26",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 131,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP26"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000131"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000109"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP26",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 132,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP26"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000132"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000109"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP26",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 133,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP26"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000133"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000109"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDPA1",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 134,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDPA1003"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000134"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000109"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDPA1",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 135,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDPA1003"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000135"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000109"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP05",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 136,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP05002"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000136"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000109"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP04",
+          "qualf": "QUALF",
+          "level": 3,
+          "recno": 137,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP04001"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000137"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000109"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDP28",
+          "qualf": "",
+          "level": 3,
+          "recno": 138,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDP28003"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000138"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000109"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "03"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDS01",
+          "qualf": "QUALF",
+          "level": 2,
+          "recno": 139,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDS01"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000139"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000109"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "02"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDS01",
+          "qualf": "QUALF",
+          "level": 2,
+          "recno": 140,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDS01"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000140"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000109"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "02"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDS01",
+          "qualf": "QUALF",
+          "level": 2,
+          "recno": 141,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDS01"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000141"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000109"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "02"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDS01",
+          "qualf": "QUALF",
+          "level": 2,
+          "recno": 142,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDS01"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000142"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000109"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "02"
+            }
+          ]
+        },
+        {
+          "segmn": "E1EDS01",
+          "qualf": "QUALF",
+          "level": 2,
+          "recno": 143,
+          "field": [
+            {
+              "key": "SEGNAM",
+              "val": "E2EDS01"
+            },
+            {
+              "key": "MANDT",
+              "val": "011"
+            },
+            {
+              "key": "DOCNUM",
+              "val": "0000002382843157"
+            },
+            {
+              "key": "SEGNUM",
+              "val": "000143"
+            },
+            {
+              "key": "PSGNUM",
+              "val": "000109"
+            },
+            {
+              "key": "HLEVEL",
+              "val": "02"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

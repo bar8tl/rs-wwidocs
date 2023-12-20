@@ -1,0 +1,649 @@
+{
+  "ssegm": [
+    {
+      "instn": 0,
+      "cntrl": [
+        {
+          "key": "TABNAM",
+          "val": "EDI_DC40"
+        },
+        {
+          "key": "MANDT",
+          "val": "011"
+        },
+        {
+          "key": "DOCNUM",
+          "val": "0000003073899750"
+        },
+        {
+          "key": "DOCREL",
+          "val": "750"
+        },
+        {
+          "key": "STATUS",
+          "val": "53"
+        },
+        {
+          "key": "DIRECT",
+          "val": "2"
+        },
+        {
+          "key": "IDOCTYP",
+          "val": "53"
+        },
+        {
+          "key": "CIMTYP",
+          "val": "53"
+        },
+        {
+          "key": "MESTYP",
+          "val": "DELINS"
+        },
+        {
+          "key": "STDMES",
+          "val": "CSVUPL"
+        },
+        {
+          "key": "SNDPOR",
+          "val": "EDIMANVTB"
+        },
+        {
+          "key": "SNDPRT",
+          "val": "KU"
+        },
+        {
+          "key": "SNDPRN",
+          "val": "1000919476"
+        },
+        {
+          "key": "RCVPOR",
+          "val": "SAPPOE"
+        },
+        {
+          "key": "RCVPRT",
+          "val": "LS"
+        },
+        {
+          "key": "RCVPRN",
+          "val": "SAPPOE011"
+        },
+        {
+          "key": "CREDAT",
+          "val": "20231106"
+        },
+        {
+          "key": "CRETIM",
+          "val": "002810"
+        },
+        {
+          "key": "SERIAL",
+          "val": "20231106002810"
+        }
+      ],
+      "rsegm": [
+        {
+          "segmn": "DELFOR02",
+          "recno": 0,
+          "level": 0,
+          "qlkey": "",
+          "qlval": "",
+          "instn": 0,
+          "field": [],
+          "child": [
+            {
+              "segmn": "E2EDK09003",
+              "recno": 1,
+              "level": 1,
+              "qlkey": "",
+              "qlval": "",
+              "instn": 1,
+              "field": [
+                {
+                  "key": "VTRNR",
+                  "val": "PO"
+                },
+                {
+                  "key": "BSTDK",
+                  "val": "20231106"
+                },
+                {
+                  "key": "LABNK",
+                  "val": "D220231106HV12"
+                },
+                {
+                  "key": "ABRVW",
+                  "val": "S"
+                },
+                {
+                  "key": "KTEXT_V",
+                  "val": "R780"
+                }
+              ],
+              "child": [
+                {
+                  "segmn": "E2EDKA1003",
+                  "recno": 2,
+                  "level": 2,
+                  "qlkey": "",
+                  "qlval": "",
+                  "instn": 1,
+                  "field": [
+                    {
+                      "key": "PARVW",
+                      "val": "AG"
+                    },
+                    {
+                      "key": "PARTN",
+                      "val": "R780"
+                    },
+                    {
+                      "key": "LIFNR",
+                      "val": "R780"
+                    }
+                  ],
+                  "child": []
+                },
+                {
+                  "segmn": "E2EDKA1003",
+                  "recno": 3,
+                  "level": 2,
+                  "qlkey": "",
+                  "qlval": "",
+                  "instn": 2,
+                  "field": [
+                    {
+                      "key": "PARVW",
+                      "val": "AB"
+                    }
+                  ],
+                  "child": []
+                },
+                {
+                  "segmn": "E2EDP10002",
+                  "recno": 4,
+                  "level": 2,
+                  "qlkey": "",
+                  "qlval": "",
+                  "instn": 1,
+                  "field": [
+                    {
+                      "key": "IDNKD",
+                      "val": "391003N270"
+                    },
+                    {
+                      "key": "KWERK",
+                      "val": "HV12"
+                    },
+                    {
+                      "key": "LABKY",
+                      "val": "2"
+                    },
+                    {
+                      "key": "SCREL",
+                      "val": "02"
+                    }
+                  ],
+                  "child": [
+                    {
+                      "segmn": "E2EDP15001",
+                      "recno": 5,
+                      "level": 3,
+                      "qlkey": "",
+                      "qlval": "",
+                      "instn": 1,
+                      "field": [
+                        {
+                          "key": "TDNAME",
+                          "val": "YAQU"
+                        },
+                        {
+                          "key": "SPRAS",
+                          "val": "EN"
+                        },
+                        {
+                          "key": "TXT01",
+                          "val": "CUST"
+                        }
+                      ],
+                      "child": []
+                    },
+                    {
+                      "segmn": "E2EDP15001",
+                      "recno": 6,
+                      "level": 3,
+                      "qlkey": "",
+                      "qlval": "",
+                      "instn": 2,
+                      "field": [
+                        {
+                          "key": "TDNAME",
+                          "val": "YADT"
+                        },
+                        {
+                          "key": "SPRAS",
+                          "val": "EN"
+                        },
+                        {
+                          "key": "TXT01",
+                          "val": "1300"
+                        },
+                        {
+                          "key": "TXT02",
+                          "val": "PCE"
+                        }
+                      ],
+                      "child": []
+                    },
+                    {
+                      "segmn": "E2EDP16002",
+                      "recno": 7,
+                      "level": 3,
+                      "qlkey": "",
+                      "qlval": "",
+                      "instn": 1,
+                      "field": [
+                        {
+                          "key": "ETTYP",
+                          "val": "1"
+                        },
+                        {
+                          "key": "PRGRS",
+                          "val": "D"
+                        },
+                        {
+                          "key": "EDATUV",
+                          "val": "20231106"
+                        },
+                        {
+                          "key": "EDATUB",
+                          "val": "20231106"
+                        },
+                        {
+                          "key": "WMENG",
+                          "val": "2"
+                        }
+                      ],
+                      "child": []
+                    },
+                    {
+                      "segmn": "E2EDP16002",
+                      "recno": 8,
+                      "level": 3,
+                      "qlkey": "",
+                      "qlval": "",
+                      "instn": 2,
+                      "field": [
+                        {
+                          "key": "ETTYP",
+                          "val": "1"
+                        },
+                        {
+                          "key": "PRGRS",
+                          "val": "D"
+                        },
+                        {
+                          "key": "EDATUV",
+                          "val": "20231107"
+                        },
+                        {
+                          "key": "EDATUB",
+                          "val": "20231107"
+                        },
+                        {
+                          "key": "WMENG",
+                          "val": "0"
+                        }
+                      ],
+                      "child": []
+                    },
+                    {
+                      "segmn": "E2EDP16002",
+                      "recno": 9,
+                      "level": 3,
+                      "qlkey": "",
+                      "qlval": "",
+                      "instn": 3,
+                      "field": [
+                        {
+                          "key": "ETTYP",
+                          "val": "1"
+                        },
+                        {
+                          "key": "PRGRS",
+                          "val": "D"
+                        },
+                        {
+                          "key": "EDATUV",
+                          "val": "20231108"
+                        },
+                        {
+                          "key": "EDATUB",
+                          "val": "20231108"
+                        },
+                        {
+                          "key": "WMENG",
+                          "val": "0"
+                        }
+                      ],
+                      "child": []
+                    },
+                    {
+                      "segmn": "E2EDP16002",
+                      "recno": 10,
+                      "level": 3,
+                      "qlkey": "",
+                      "qlval": "",
+                      "instn": 4,
+                      "field": [
+                        {
+                          "key": "ETTYP",
+                          "val": "1"
+                        },
+                        {
+                          "key": "PRGRS",
+                          "val": "D"
+                        },
+                        {
+                          "key": "EDATUV",
+                          "val": "20231109"
+                        },
+                        {
+                          "key": "EDATUB",
+                          "val": "20231109"
+                        },
+                        {
+                          "key": "WMENG",
+                          "val": "0"
+                        }
+                      ],
+                      "child": []
+                    },
+                    {
+                      "segmn": "E2EDP16002",
+                      "recno": 11,
+                      "level": 3,
+                      "qlkey": "",
+                      "qlval": "",
+                      "instn": 5,
+                      "field": [
+                        {
+                          "key": "ETTYP",
+                          "val": "1"
+                        },
+                        {
+                          "key": "PRGRS",
+                          "val": "D"
+                        },
+                        {
+                          "key": "EDATUV",
+                          "val": "20231110"
+                        },
+                        {
+                          "key": "EDATUB",
+                          "val": "20231110"
+                        },
+                        {
+                          "key": "WMENG",
+                          "val": "0"
+                        }
+                      ],
+                      "child": []
+                    },
+                    {
+                      "segmn": "E2EDP16002",
+                      "recno": 12,
+                      "level": 3,
+                      "qlkey": "",
+                      "qlval": "",
+                      "instn": 6,
+                      "field": [
+                        {
+                          "key": "ETTYP",
+                          "val": "1"
+                        },
+                        {
+                          "key": "PRGRS",
+                          "val": "D"
+                        },
+                        {
+                          "key": "EDATUV",
+                          "val": "20231111"
+                        },
+                        {
+                          "key": "EDATUB",
+                          "val": "20231111"
+                        },
+                        {
+                          "key": "WMENG",
+                          "val": "0"
+                        }
+                      ],
+                      "child": []
+                    },
+                    {
+                      "segmn": "E2EDP16002",
+                      "recno": 13,
+                      "level": 3,
+                      "qlkey": "",
+                      "qlval": "",
+                      "instn": 7,
+                      "field": [
+                        {
+                          "key": "ETTYP",
+                          "val": "1"
+                        },
+                        {
+                          "key": "PRGRS",
+                          "val": "D"
+                        },
+                        {
+                          "key": "EDATUV",
+                          "val": "20231112"
+                        },
+                        {
+                          "key": "EDATUB",
+                          "val": "20231112"
+                        },
+                        {
+                          "key": "WMENG",
+                          "val": "0"
+                        }
+                      ],
+                      "child": []
+                    },
+                    {
+                      "segmn": "E2EDP16002",
+                      "recno": 14,
+                      "level": 3,
+                      "qlkey": "",
+                      "qlval": "",
+                      "instn": 8,
+                      "field": [
+                        {
+                          "key": "ETTYP",
+                          "val": "1"
+                        },
+                        {
+                          "key": "PRGRS",
+                          "val": "D"
+                        },
+                        {
+                          "key": "EDATUV",
+                          "val": "20231113"
+                        },
+                        {
+                          "key": "EDATUB",
+                          "val": "20231113"
+                        },
+                        {
+                          "key": "WMENG",
+                          "val": "0"
+                        }
+                      ],
+                      "child": []
+                    },
+                    {
+                      "segmn": "E2EDP16002",
+                      "recno": 15,
+                      "level": 3,
+                      "qlkey": "",
+                      "qlval": "",
+                      "instn": 9,
+                      "field": [
+                        {
+                          "key": "ETTYP",
+                          "val": "1"
+                        },
+                        {
+                          "key": "PRGRS",
+                          "val": "D"
+                        },
+                        {
+                          "key": "EDATUV",
+                          "val": "20231114"
+                        },
+                        {
+                          "key": "EDATUB",
+                          "val": "20231114"
+                        },
+                        {
+                          "key": "WMENG",
+                          "val": "10"
+                        }
+                      ],
+                      "child": []
+                    },
+                    {
+                      "segmn": "E2EDP16002",
+                      "recno": 16,
+                      "level": 3,
+                      "qlkey": "",
+                      "qlval": "",
+                      "instn": 10,
+                      "field": [
+                        {
+                          "key": "ETTYP",
+                          "val": "1"
+                        },
+                        {
+                          "key": "PRGRS",
+                          "val": "D"
+                        },
+                        {
+                          "key": "EDATUV",
+                          "val": "20231115"
+                        },
+                        {
+                          "key": "EDATUB",
+                          "val": "20231115"
+                        },
+                        {
+                          "key": "WMENG",
+                          "val": "10"
+                        }
+                      ],
+                      "child": []
+                    },
+                    {
+                      "segmn": "E2EDP16002",
+                      "recno": 17,
+                      "level": 3,
+                      "qlkey": "",
+                      "qlval": "",
+                      "instn": 11,
+                      "field": [
+                        {
+                          "key": "ETTYP",
+                          "val": "1"
+                        },
+                        {
+                          "key": "PRGRS",
+                          "val": "D"
+                        },
+                        {
+                          "key": "EDATUV",
+                          "val": "20231116"
+                        },
+                        {
+                          "key": "EDATUB",
+                          "val": "20231116"
+                        },
+                        {
+                          "key": "WMENG",
+                          "val": "10"
+                        }
+                      ],
+                      "child": []
+                    },
+                    {
+                      "segmn": "E2EDP16002",
+                      "recno": 18,
+                      "level": 3,
+                      "qlkey": "",
+                      "qlval": "",
+                      "instn": 12,
+                      "field": [
+                        {
+                          "key": "ETTYP",
+                          "val": "1"
+                        },
+                        {
+                          "key": "PRGRS",
+                          "val": "D"
+                        },
+                        {
+                          "key": "EDATUV",
+                          "val": "20231117"
+                        },
+                        {
+                          "key": "EDATUB",
+                          "val": "20231117"
+                        },
+                        {
+                          "key": "WMENG",
+                          "val": "10"
+                        }
+                      ],
+                      "child": []
+                    },
+                    {
+                      "segmn": "E2EDP16002",
+                      "recno": 19,
+                      "level": 3,
+                      "qlkey": "",
+                      "qlval": "",
+                      "instn": 13,
+                      "field": [
+                        {
+                          "key": "ETTYP",
+                          "val": "1"
+                        },
+                        {
+                          "key": "PRGRS",
+                          "val": "D"
+                        },
+                        {
+                          "key": "EDATUV",
+                          "val": "20231118"
+                        },
+                        {
+                          "key": "EDATUB",
+                          "val": "20231118"
+                        },
+                        {
+                          "key": "WMENG",
+                          "val": "10"
+                        }
+                      ],
+                      "child": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

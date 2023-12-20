@@ -1,2 +1,2 @@
-wwidocs-rs.exe -cdb:itm.str.sga
+wwidocs-rs.exe -cdb
 pause

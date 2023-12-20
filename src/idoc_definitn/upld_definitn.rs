@@ -1,4 +1,4 @@
-// upload_idoc_definitn.rs - Read SAP IDoc parser file, and upload IDoc definition
+// upload_definitn.rs - Read SAP IDoc parser file, and upload IDoc definition
 // detail and structure into an internal database (2021-07-01 bar8tl)
 use crate::idoc_definitn::prep_items_output::prep_items_output;
 use crate::idoc_definitn::proc_items_master::proc_items_master;
@@ -15,7 +15,7 @@ use std::io::{BufRead, BufReader};
 
 // Main logic to process: 1) Master data for IDoc Items, 2) Structure for groups,
 // and 3) Structure for segments
-pub fn upld_idoc_definitn(dbopt: String, inpdr: String, objnm: String) {
+pub fn upld_definitn(dbopt: String, inpdr: String, objnm: String) {
   let cnn = Connection::open(&dbopt).expect("DB Open Error");
   let mut ii = InpitmTp { ..Default::default() };
   let mut ig = InpgrpTp { ..Default::default() };

@@ -11,37 +11,27 @@ pub struct ProgmTp {
   #[serde(default)]
   pub dbodr: String,
   #[serde(default)]
+  pub inptp: String,
+  #[serde(default)]
+  pub inpdr: String,
+  #[serde(default)]
+  pub outtp: String,
+  #[serde(default)]
+  pub outdr: String,
+  #[serde(default)]
+  pub reftp: String,
+  #[serde(default)]
+  pub refdr: String,
+  #[serde(default)]
+  pub wkflw: String,
+  #[serde(default)]
   pub pcddr: String,
-  #[serde(default)]
-  pub qrytp: String,
-  #[serde(default)]
-  pub qrydr: String,
-  #[serde(default)]
-  pub deftp: String,
-  #[serde(default)]
-  pub defdr: String,
-  #[serde(default)]
-  pub strtp: String,
-  #[serde(default)]
-  pub strdr: String,
-  #[serde(default)]
-  pub fxstp: String,
-  #[serde(default)]
-  pub fxsdr: String,
-  #[serde(default)]
-  pub jsntp: String,
-  #[serde(default)]
-  pub jsndr: String,
-  #[serde(default)]
-  pub inqtp: String,
-  #[serde(default)]
-  pub inqdr: String,
   #[serde(default)]
   pub cntrl: String,
   #[serde(default)]
   pub clien: String,
   #[serde(default)]
-  pub rcprf: String,
+  pub rcvpf: String,
   #[serde(default)]
   pub ifilt: String,
   #[serde(default)]
@@ -53,9 +43,23 @@ pub struct ProgmTp {
 #[derive(Debug, Clone, Default, Deserialize)]
 pub struct RunTp {
   #[serde(default)]
-  pub optn:  String,
+  pub optn : String,
   #[serde(default)]
-  pub objnm: String
+  pub objnm: String,
+  #[serde(default)]
+  pub inptp: String,
+  #[serde(default)]
+  pub inpdr: String,
+  #[serde(default)]
+  pub outtp: String,
+  #[serde(default)]
+  pub outdr: String,
+  #[serde(default)]
+  pub reftp: String,
+  #[serde(default)]
+  pub refdr: String,
+  #[serde(default)]
+  pub pcddr: String
 }
 
 #[derive(Debug, Clone, Default, Deserialize)]
@@ -69,7 +73,7 @@ pub struct IdoctTp {
   #[serde(default)]
   pub clien: String,
   #[serde(default)]
-  pub rcprf: String
+  pub rcvpf: String
 }
 
 #[derive(Debug, Clone, Default, Deserialize)]

@@ -1,4 +1,4 @@
-// proc_items_master.rs - Get IDOC item detail (records, groups, segments and 
+// proc_items_master.rs - Get IDOC item detail (records, groups, segments and
 // fields) and start creation of corresponding item records into the local database
 // (2021-07-01 bar8tl)
 use crate::idoc_definitn::symbols::{BEGIN, END, IDOC, RECORD, GROUP, SEGMENT,

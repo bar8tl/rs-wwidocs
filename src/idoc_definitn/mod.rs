@@ -1,7 +1,7 @@
 // mod.rs - Function modules declaration for IDOC Definition Maintenence
 // (2021-07-01 bar8tl)
 pub mod types;
-pub mod upld_idoc_definitn;
+pub mod upld_definitn;
 mod prep_items_output;
 mod proc_group_struct;
 mod proc_items_master;

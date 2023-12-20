@@ -1,0 +1,9 @@
+{
+  "progm": {
+    "dbonm": "idoctp.db", "dbodr": ".\\"
+  },
+  "run": [
+    {"optn" : "def" ,
+     "inptp": "txt" , "inpdr": "c:\\users\\bar8tl\\onedri~1\\general\\inboun~1\\_edibbm-kt\\_assets\\idoctypes\\" }
+  ]
+}

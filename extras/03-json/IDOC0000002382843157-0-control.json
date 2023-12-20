@@ -1,0 +1,85 @@
+{
+  "rctrl": [
+    {
+      "instn": 0,
+      "field": [
+        {
+          "key": "TABNAM",
+          "val": "EDI_DC40"
+        },
+        {
+          "key": "MANDT",
+          "val": "011"
+        },
+        {
+          "key": "DOCNUM",
+          "val": "0000002382843157"
+        },
+        {
+          "key": "DOCREL",
+          "val": "750"
+        },
+        {
+          "key": "STATUS",
+          "val": "14"
+        },
+        {
+          "key": "DIRECT",
+          "val": "1"
+        },
+        {
+          "key": "OUTMOD",
+          "val": "2"
+        },
+        {
+          "key": "IDOCTYP",
+          "val": "INVOIC02"
+        },
+        {
+          "key": "CIMTYP",
+          "val": "/RB04/YP3_INVOIC02_XML"
+        },
+        {
+          "key": "MESTYP",
+          "val": "INVOIC"
+        },
+        {
+          "key": "SNDPOR",
+          "val": "SAPPOE"
+        },
+        {
+          "key": "SNDPRT",
+          "val": "LS"
+        },
+        {
+          "key": "SNDPRN",
+          "val": "SAPPOE011"
+        },
+        {
+          "key": "RCVPOR",
+          "val": "EDIMANVTB"
+        },
+        {
+          "key": "RCVPRT",
+          "val": "KU"
+        },
+        {
+          "key": "RCVPRN",
+          "val": "RBRBME"
+        },
+        {
+          "key": "CREDAT",
+          "val": "20220421"
+        },
+        {
+          "key": "CRETIM",
+          "val": "024849"
+        },
+        {
+          "key": "SERIAL",
+          "val": "20220421024849"
+        }
+      ]
+    }
+  ]
+}

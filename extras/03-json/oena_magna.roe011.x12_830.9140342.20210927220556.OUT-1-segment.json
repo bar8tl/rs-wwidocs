@@ -1,0 +1,356 @@
+{
+ "Ssegm": [
+  {
+   "Instn": 1,
+   "Cntrl": [
+    {
+     "Key": "TABNAM",
+     "Val": "EDI_DC40"
+    },
+    {
+     "Key": "MANDT",
+     "Val": "011"
+    },
+    {
+     "Key": "DIRECT",
+     "Val": "2"
+    },
+    {
+     "Key": "IDOCTYP",
+     "Val": "DELFOR02"
+    },
+    {
+     "Key": "MESTYP",
+     "Val": "DELINS"
+    },
+    {
+     "Key": "STDMES",
+     "Val": "830"
+    },
+    {
+     "Key": "SNDPOR",
+     "Val": "EDIMANVEN"
+    },
+    {
+     "Key": "SNDPRT",
+     "Val": "KU"
+    },
+    {
+     "Key": "SNDPFC",
+     "Val": "AG"
+    },
+    {
+     "Key": "SNDPRN",
+     "Val": "1000161835"
+    },
+    {
+     "Key": "SNDSAD",
+     "Val": "PO"
+    },
+    {
+     "Key": "SNDLAD",
+     "Val": "252796578;ZBOSCH;"
+    },
+    {
+     "Key": "RCVPOR",
+     "Val": "SAPQOE"
+    },
+    {
+     "Key": "RCVPRT",
+     "Val": "KU"
+    },
+    {
+     "Key": "RCVPRN",
+     "Val": "SAPQOE"
+    },
+    {
+     "Key": "CREDAT",
+     "Val": "20210927"
+    },
+    {
+     "Key": "CRETIM",
+     "Val": "221913"
+    },
+    {
+     "Key": "REFINT",
+     "Val": "830-118089"
+    },
+    {
+     "Key": "REFGRP",
+     "Val": "106137"
+    },
+    {
+     "Key": "REFMES",
+     "Val": "000857670"
+    },
+    {
+     "Key": "ARCKEY",
+     "Val": "workflow-ID: 9140342"
+    }
+   ],
+   "Rsegm": [
+    {
+     "Segmn": "DELFOR02",
+     "Recno": 0,
+     "Level": 0,
+     "Qlkey": "",
+     "Qlval": "",
+     "Instn": 0,
+     "Field": null,
+     "Child": [
+      {
+       "Segmn": "E2EDK09003",
+       "Recno": 1,
+       "Level": 1,
+       "Qlkey": "",
+       "Qlval": "",
+       "Instn": 1,
+       "Field": [
+        {
+         "Key": "BSTDK",
+         "Val": "20210922"
+        },
+        {
+         "Key": "LABNK",
+         "Val": "20115902"
+        },
+        {
+         "Key": "ABRVW",
+         "Val": "S"
+        },
+        {
+         "Key": "KTEXT_V",
+         "Val": "ZBOSCH"
+        },
+        {
+         "Key": "USR03",
+         "Val": "05"
+        }
+       ],
+       "Child": [
+        {
+         "Segmn": "E2EDKA1003",
+         "Recno": 2,
+         "Level": 2,
+         "Qlkey": "PARVW",
+         "Qlval": "AG",
+         "Instn": 2,
+         "Field": [
+          {
+           "Key": "PARVW",
+           "Val": "AG"
+          },
+          {
+           "Key": "PARTN",
+           "Val": "ZBOSCH"
+          },
+          {
+           "Key": "LIFNR",
+           "Val": "ZBOSCH"
+          }
+         ],
+         "Child": null
+        },
+        {
+         "Segmn": "E2EDKA1003",
+         "Recno": 3,
+         "Level": 2,
+         "Qlkey": "PARVW",
+         "Qlval": "WK",
+         "Instn": 3,
+         "Field": [
+          {
+           "Key": "PARVW",
+           "Val": "WK"
+          },
+          {
+           "Key": "PARTN",
+           "Val": "252796578"
+          }
+         ],
+         "Child": null
+        },
+        {
+         "Segmn": "E2EDP10002",
+         "Recno": 4,
+         "Level": 2,
+         "Qlkey": "",
+         "Qlval": "",
+         "Instn": 2,
+         "Field": [
+          {
+           "Key": "IDNKD",
+           "Val": "ABC031"
+          },
+          {
+           "Key": "KWERK",
+           "Val": "252796578"
+          },
+          {
+           "Key": "BELNR",
+           "Val": "279999"
+          },
+          {
+           "Key": "LFIMG",
+           "Val": "588"
+          },
+          {
+           "Key": "LIDTL",
+           "Val": "20210916"
+          },
+          {
+           "Key": "AKUEM",
+           "Val": "9614"
+          },
+          {
+           "Key": "ABRAB",
+           "Val": "20210920"
+          },
+          {
+           "Key": "ABRBI",
+           "Val": "20220831"
+          },
+          {
+           "Key": "SCREL",
+           "Val": "03"
+          },
+          {
+           "Key": "LABNK",
+           "Val": "20115902"
+          }
+         ],
+         "Child": [
+          {
+           "Segmn": "E2EDP15001",
+           "Recno": 5,
+           "Level": 3,
+           "Qlkey": "",
+           "Qlval": "",
+           "Instn": 1,
+           "Field": [
+            {
+             "Key": "TDNAME",
+             "Val": "YAQU"
+            },
+            {
+             "Key": "TXT01",
+             "Val": "CUST"
+            }
+           ],
+           "Child": null
+          },
+          {
+           "Segmn": "E2EDP16002",
+           "Recno": 6,
+           "Level": 3,
+           "Qlkey": "",
+           "Qlval": "",
+           "Instn": 5,
+           "Field": [
+            {
+             "Key": "ETTYP",
+             "Val": "4"
+            },
+            {
+             "Key": "PRGRS",
+             "Val": "D"
+            },
+            {
+             "Key": "EDATUV",
+             "Val": "20210913"
+            },
+            {
+             "Key": "EDATUB",
+             "Val": "20210913"
+            },
+            {
+             "Key": "ETVTF",
+             "Val": "ZZ"
+            },
+            {
+             "Key": "WMENG",
+             "Val": "49"
+            }
+           ],
+           "Child": null
+          },
+          {
+           "Segmn": "E2EDP16002",
+           "Recno": 7,
+           "Level": 3,
+           "Qlkey": "",
+           "Qlval": "",
+           "Instn": 6,
+           "Field": [
+            {
+             "Key": "ETTYP",
+             "Val": "4"
+            },
+            {
+             "Key": "PRGRS",
+             "Val": "D"
+            },
+            {
+             "Key": "EDATUV",
+             "Val": "20210920"
+            },
+            {
+             "Key": "EDATUB",
+             "Val": "20210920"
+            },
+            {
+             "Key": "ETVTF",
+             "Val": "ZZ"
+            },
+            {
+             "Key": "WMENG",
+             "Val": "147"
+            }
+           ],
+           "Child": null
+          },
+          {
+           "Segmn": "E2EDP16002",
+           "Recno": 8,
+           "Level": 3,
+           "Qlkey": "",
+           "Qlval": "",
+           "Instn": 7,
+           "Field": [
+            {
+             "Key": "ETTYP",
+             "Val": "4"
+            },
+            {
+             "Key": "PRGRS",
+             "Val": "M"
+            },
+            {
+             "Key": "EDATUV",
+             "Val": "20220207"
+            },
+            {
+             "Key": "EDATUB",
+             "Val": "20220207"
+            },
+            {
+             "Key": "ETVTF",
+             "Val": "ZZ"
+            },
+            {
+             "Key": "WMENG",
+             "Val": "196"
+            }
+           ],
+           "Child": null
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
